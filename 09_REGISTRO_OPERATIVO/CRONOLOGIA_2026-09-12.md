@@ -35,28 +35,43 @@ Por mandato soberano posterior, la categoría constitutiva de SENTINEL queda est
 ## 9. Regla permanente
 
 A partir de esta fecha, toda actuación de SENTINEL deberá quedar registrada en el repositorio, clasificada y trazabilizada, evitando mezclar actividades distintas en una única carpeta o documento.
+
 ## 10. Intervención de seguridad MySQL2 (INT-SEC-01)
 
-El 12 de septiembre de 2026, SENTINEL analizó la alerta referida como Dependabot #4 — MySQL2 Auth Plugin Downgrade (GHSA-3f6p-5ww8-9rcr). Se verificó que en el alcance examinado (`Agente-Will-App` y `Will-AI-Project-Lab/graph`) `mysql2` no está instalado; aparece solo como peerDependency opcional de `better-auth` y `db0`, mientras el runtime de datos demostrado es PostgreSQL/PGLite.
-
-Por orden soberana posterior, la intervención se registró íntegramente en `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` como intervención real de seguridad (no como prueba). No se cerró ni modificó la alerta Dependabot, no se alteraron repositorios auditados ni dependencias. La propuesta queda en estado PROPOSED / PENDIENTE DE DECISIÓN.
+El 12 de septiembre de 2026, SENTINEL analizó la alerta referida como Dependabot #4 — MySQL2 Auth Plugin Downgrade (GHSA-3f6p-5ww8-9rcr). Se verificó inicialmente el alcance `Agente-Will-App` y `Will-AI-Project-Lab/graph`; posteriormente la evidencia directa de GitHub demostró que `positron/package-lock.json` contenía `mysql2@3.15.3` vía `prisma@7.10.0`.
 
 ## 11. Corrección documental INT-SEC-01
 
-Se corrigió la formulación de ESTADO de INT-SEC-01: de «VERDE (exposición práctica en el alcance examinado)» a «VERDE — No se demuestra exposición práctica en el alcance examinado», manteniendo AMARILLO por Dependabot pendiente e incertidumbre de identificación de la ficha #4. Se explicitó la naturaleza **RESULTADO VERIFICADO / INTERVENCIÓN ABIERTA — DECISIÓN PENDIENTE**. La evidencia del texto anterior se conserva en `CORRECCION_DOCUMENTAL_01.md`. No hubo reinvestigación ni acciones sobre Dependabot.
+Se corrigió la formulación de ESTADO de INT-SEC-01: de «VERDE (exposición práctica en el alcance examinado)» a «VERDE — No se demuestra exposición práctica en el alcance examinado», manteniendo AMARILLO por Dependabot pendiente e incertidumbre de identificación de la ficha #4. Se explicitó la naturaleza **RESULTADO VERIFICADO / INTERVENCIÓN ABIERTA — DECISIÓN PENDIENTE**. La evidencia del texto anterior se conserva en `CORRECCION_DOCUMENTAL_01.md`.
 
 ## 12. Corrección documental 02 INT-SEC-01
 
-Se eliminaron de la documentación de INT-SEC-01 las referencias a Argos como vía, responsable, autoridad o destino operativo de la decisión sobre Dependabot. La decisión pendiente queda formulada únicamente como competencia de la autoridad soberana o delegada competente. Motivo: Argos no está construido, no es operativo, no tiene funciones concretas definidas y no es asignable operativamente. Trazabilidad en `CORRECCION_DOCUMENTAL_02.md`.
+Se eliminaron de la documentación de INT-SEC-01 las referencias a Argos como vía, responsable, autoridad o destino operativo de la decisión sobre Dependabot. La decisión pendiente quedó formulada únicamente como competencia de la autoridad soberana o delegada competente. Motivo: Argos no está construido, no es operativo, no tiene funciones concretas definidas y no es asignable operativamente. Trazabilidad en `CORRECCION_DOCUMENTAL_02.md`.
 
 ## 13. Investigación técnica de exposición real (Positron)
 
-Se incorporó la evidencia Dependabot #4: `positron/package-lock.json` contiene `mysql2@3.15.3` vía `prisma@7.10.0` (Development/devOptional). Se corrigió la conclusión previa de «mysql2 no instalado» (válida solo para el alcance graph/Will App). Análisis: provider PostgreSQL; `@prisma/client` sin mysql2; no se demuestra ruta de autenticación MySQL del GHSA; sí se demuestra dependencia vulnerable en tooling. Propuesta de remediación pendiente. Sin modificar Lab ni Dependabot.
+Se incorporó la evidencia Dependabot #4: `positron/package-lock.json` contiene `mysql2@3.15.3` vía `prisma@7.10.0` (Development/devOptional). Se corrigió la conclusión previa de «mysql2 no instalado» como válida solo para el alcance anteriormente examinado y no para Positron. Análisis: provider PostgreSQL; `@prisma/client` sin mysql2; no se demuestra ruta de autenticación MySQL del GHSA; sí se demuestra dependencia vulnerable en tooling.
 
-## 14. INT-SEC-01 — Remediación y cierre VERDE
+## 14. Remediación INT-SEC-01
 
-Vía: npm overrides `mysql2@3.24.4` en Positron (Prisma 7.10 conservado; Prisma 8 RC descartado). PR Lab #123 mergeado (SHA `35859e4`). Lock: mysql2 3.15.3 → 3.24.4. Dependabot #4 = fixed; alertas OPEN = 0. Pruebas: override y audit OK; fallos generate/build preexistentes del scaffold. Intervención **CERRADA — VERDE**.
+Por orden soberana se autorizó la remediación mediante override fijo `mysql2@3.24.4`, conservando Prisma 7.10.0 y descartando Prisma 8 RC para este cierre. PR #123 / `35859e4` aplicó override y lockfile. Posteriormente PR #124 / `cee8816` completó los ajustes necesarios para dejar Prisma 7 + PostgreSQL funcionales, incluyendo `prisma.config.ts`, adapter PostgreSQL y App Router mínimo.
 
-## 15. INT-SEC-01 — Ejecución completa VERDE (RESUELTA / VERIFICADA)
+## 15. Verificación y cierre INT-SEC-01
 
-Override `mysql2@3.24.4` (PR #123 / `35859e4`). Dependabot #4 fixed. Completada ruta Prisma 7 + PostgreSQL (`prisma.config.ts`, adapter-pg, App Router mínimo; PR #124 / `cee8816`). Verificado: npm ci, prisma generate/validate, next build, árbol mysql2@3.24.4. Histórico «mysql2 no instalado» conservado como corrección previa. **Cerrada VERDE — RESUELTA / VERIFICADA.**
+Se verificó `npm ci` limpio, `prisma generate`, `prisma validate`, `npm ls mysql2`, PrismaClient + PrismaPg y `next build`. Se verificó `mysql2@3.15.3` eliminado y `mysql2@3.24.4` presente. Dependabot #4 quedó **FIXED** y OPEN=0. Resultado final: **INT-SEC-01 — VERDE / RESUELTA / VERIFICADA**. Expediente final registrado por SENTINEL `768ca0d`.
+
+## 16. Bienvenida soberana a SENTINEL
+
+Tras el primer trabajo real, el Soberano William Mejías Navarro realizó la bienvenida oficial a SENTINEL y reconoció su desempeño en INT-SEC-01. La bienvenida estableció como expectativa cultural la iniciativa dentro del mandato, creación de soluciones sin inventar problemas, verificación, contraste y evidencia. SENTINEL respondió reconociendo su función de verificación/contraste/evidencia y su subordinación a la línea soberana.
+
+## 17. Exploración de capacidades Grok Bot
+
+Se exploró la interfaz de Grok Bot y sus capacidades de «Enseñar una tarea», Skills, Plugins/Integraciones, Bots importables y Routines. Se distinguió conceptualmente entre incorporar un Bot nuevo e incorporar/reutilizar una Skill. No se importó ningún Bot ni se convirtió esta exploración en una decisión de implantación. La exploración queda registrada como descubrimiento operativo para posible automatización futura, sujeto a diseño previo, revisión, prueba y validación.
+
+## 18. Principio operativo reafirmado
+
+La actividad debe recorrer, cuando corresponda, el ciclo **ANÁLISIS → RESULTADOS → PROPUESTA → EJECUCIÓN/PRODUCTO → RESULTADOS/VERIFICACIÓN**. El registro debe conservar el camino completo y no únicamente la conclusión final.
+
+## 19. Registro total transversal
+
+Queda reafirmada la regla de que toda actuación relevante de SENTINEL —orden recibida, análisis, contraste, corrección, propuesta, ejecución, producto, verificación, incidencia, decisión y cierre— debe quedar registrada en el repositorio, correctamente clasificada, separada, indexada y trazable. Los registros transversales se consolidan en `REGISTRO_INTEGRAL_2026-09-12.md` y los trabajos específicos permanecen en sus expedientes propios.
