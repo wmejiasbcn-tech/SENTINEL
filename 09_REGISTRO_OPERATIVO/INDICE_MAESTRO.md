@@ -16,6 +16,7 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente |
 | EVID-SEC-01 | Evidencia | MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/02_EVIDENCIAS/` | Registrada |
 | DOC-SEC-01 | Corrección documental | INT-SEC-01 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_01.md` | Aplicada |
+| DOC-SEC-02 | Corrección documental | INT-SEC-01 (sin Argos operativo) | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_02.md` | Aplicada |
 | PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | PROPOSED / pendiente de decisión |
 
 ## Regla de clasificación

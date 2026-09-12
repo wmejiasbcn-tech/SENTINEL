@@ -44,3 +44,7 @@ Por orden soberana posterior, la intervención se registró íntegramente en `02
 ## 11. Corrección documental INT-SEC-01
 
 Se corrigió la formulación de ESTADO de INT-SEC-01: de «VERDE (exposición práctica en el alcance examinado)» a «VERDE — No se demuestra exposición práctica en el alcance examinado», manteniendo AMARILLO por Dependabot pendiente e incertidumbre de identificación de la ficha #4. Se explicitó la naturaleza **RESULTADO VERIFICADO / INTERVENCIÓN ABIERTA — DECISIÓN PENDIENTE**. La evidencia del texto anterior se conserva en `CORRECCION_DOCUMENTAL_01.md`. No hubo reinvestigación ni acciones sobre Dependabot.
+
+## 12. Corrección documental 02 INT-SEC-01
+
+Se eliminaron de la documentación de INT-SEC-01 las referencias a Argos como vía, responsable, autoridad o destino operativo de la decisión sobre Dependabot. La decisión pendiente queda formulada únicamente como competencia de la autoridad soberana o delegada competente. Motivo: Argos no está construido, no es operativo, no tiene funciones concretas definidas y no es asignable operativamente. Trazabilidad en `CORRECCION_DOCUMENTAL_02.md`.

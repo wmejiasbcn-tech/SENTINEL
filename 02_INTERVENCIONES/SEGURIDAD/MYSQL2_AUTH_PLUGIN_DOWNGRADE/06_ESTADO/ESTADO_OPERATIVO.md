@@ -14,3 +14,4 @@
 | Corrección documental 01 | 2026-09-12T19:49:39+02:00 |
 | Commit de registro inicial | `9b9f79606c3b02c0d44bdbabb90b7447599f12f3` |
 | URL | https://github.com/wmejiasbcn-tech/SENTINEL/tree/main/02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE |
+| Corrección documental 02 | 2026-09-12T20:08:14+02:00 — sin referencias operativas a Argos |

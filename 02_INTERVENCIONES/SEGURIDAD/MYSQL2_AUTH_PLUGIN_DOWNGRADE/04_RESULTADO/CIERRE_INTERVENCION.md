@@ -45,7 +45,7 @@ El resultado analítico está **verificado y registrado**. La intervención perm
 
 ## PROPUESTA
 
-**PROPOSED / PENDIENTE DE DECISIÓN:** que la autoridad competente (Soberano / Argos / quien tenga acceso Dependabot) decida si descarta la alerta como *not applicable / vulnerable dependency not reachable*, **sin** instalar `mysql2` y **sin** modificar dependencias salvo decisión expresa distinta.
+**PROPOSED / PENDIENTE DE DECISIÓN:** que la autoridad soberana o delegada competente (quien tenga acceso Dependabot) decida si descarta la alerta como *not applicable / vulnerable dependency not reachable*, **sin** instalar `mysql2` y **sin** modificar dependencias salvo decisión expresa distinta.
 
 ---
 
@@ -61,7 +61,7 @@ El resultado analítico está **verificado y registrado**. La intervención perm
 
 1. ¿Descartar / anotar la alerta Dependabot como no aplicable?  
 2. ¿Mantenerla abierta como recordatorio de higiene de peers?  
-3. ¿Alguna otra acción de Argos/ciberseguridad?
+3. ¿Alguna otra decisión determinada por la autoridad soberana o delegada competente?
 
 ---
 
