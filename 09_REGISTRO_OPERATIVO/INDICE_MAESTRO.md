@@ -13,10 +13,15 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | INT-01 | Intervención | Will App | `02_INTERVENCIONES/WILL_APP/RESULTADO_AUDITORIA_01.md` | Resultado registrado |
 | EVID-01 | Evidencia | Will App | `04_EVIDENCIAS/WILL_APP/REFERENCIAS_AUDITORIA_01.md` | Registrada |
 | PROP-01 | Propuesta | Will App | `06_PROPUESTAS/WILL_APP/PROPUESTA_01.md` | Pendiente |
+| INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Registrada · propuesta pendiente |
+| EVID-SEC-01 | Evidencia | MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/02_EVIDENCIAS/` | Registrada |
+| PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | PROPOSED / pendiente de decisión |
 
 ## Regla de clasificación
 
 Las pruebas de SENTINEL, los trabajos operativos sobre objetos externos, las evidencias, los resultados y las propuestas se conservan en espacios separados.
+
+Las intervenciones de seguridad se registran bajo `02_INTERVENCIONES/SEGURIDAD/` y no se clasifican como pruebas de SENTINEL.
 
 ## Regla de trazabilidad
 

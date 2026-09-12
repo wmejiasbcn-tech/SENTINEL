@@ -35,3 +35,8 @@ Por mandato soberano posterior, la categoría constitutiva de SENTINEL queda est
 ## 9. Regla permanente
 
 A partir de esta fecha, toda actuación de SENTINEL deberá quedar registrada en el repositorio, clasificada y trazabilizada, evitando mezclar actividades distintas en una única carpeta o documento.
+## 10. Intervención de seguridad MySQL2 (INT-SEC-01)
+
+El 12 de septiembre de 2026, SENTINEL analizó la alerta referida como Dependabot #4 — MySQL2 Auth Plugin Downgrade (GHSA-3f6p-5ww8-9rcr). Se verificó que en el alcance examinado (`Agente-Will-App` y `Will-AI-Project-Lab/graph`) `mysql2` no está instalado; aparece solo como peerDependency opcional de `better-auth` y `db0`, mientras el runtime de datos demostrado es PostgreSQL/PGLite.
+
+Por orden soberana posterior, la intervención se registró íntegramente en `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` como intervención real de seguridad (no como prueba). No se cerró ni modificó la alerta Dependabot, no se alteraron repositorios auditados ni dependencias. La propuesta queda en estado PROPOSED / PENDIENTE DE DECISIÓN.
