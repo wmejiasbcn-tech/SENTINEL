@@ -40,3 +40,7 @@ A partir de esta fecha, toda actuación de SENTINEL deberá quedar registrada en
 El 12 de septiembre de 2026, SENTINEL analizó la alerta referida como Dependabot #4 — MySQL2 Auth Plugin Downgrade (GHSA-3f6p-5ww8-9rcr). Se verificó que en el alcance examinado (`Agente-Will-App` y `Will-AI-Project-Lab/graph`) `mysql2` no está instalado; aparece solo como peerDependency opcional de `better-auth` y `db0`, mientras el runtime de datos demostrado es PostgreSQL/PGLite.
 
 Por orden soberana posterior, la intervención se registró íntegramente en `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` como intervención real de seguridad (no como prueba). No se cerró ni modificó la alerta Dependabot, no se alteraron repositorios auditados ni dependencias. La propuesta queda en estado PROPOSED / PENDIENTE DE DECISIÓN.
+
+## 11. Corrección documental INT-SEC-01
+
+Se corrigió la formulación de ESTADO de INT-SEC-01: de «VERDE (exposición práctica en el alcance examinado)» a «VERDE — No se demuestra exposición práctica en el alcance examinado», manteniendo AMARILLO por Dependabot pendiente e incertidumbre de identificación de la ficha #4. Se explicitó la naturaleza **RESULTADO VERIFICADO / INTERVENCIÓN ABIERTA — DECISIÓN PENDIENTE**. La evidencia del texto anterior se conserva en `CORRECCION_DOCUMENTAL_01.md`. No hubo reinvestigación ni acciones sobre Dependabot.
