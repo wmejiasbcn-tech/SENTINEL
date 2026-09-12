@@ -4,8 +4,8 @@
 |---|---|
 | ID | INT-SEC-01 |
 | Fase | **CERRADA** |
-| Naturaleza | RESULTADO FINAL VERIFICADO |
-| Semáforo | **VERDE** |
-| Remediación | overrides mysql2@3.24.4 en Positron; PR #123; SHA 35859e4 |
+| Dictamen | **VERDE — RESUELTA / VERIFICADA** |
+| Lab override | PR #123 → `35859e4` |
+| Lab funcional PG | PR #124 → `cee8816` |
 | Dependabot #4 | fixed |
-| Actualizado | 2026-09-12T20:44:31+02:00 |
+| Actualizado | 2026-09-12T21:54:00+02:00 |

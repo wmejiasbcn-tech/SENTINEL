@@ -13,12 +13,13 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | INT-01 | Intervención | Will App | `02_INTERVENCIONES/WILL_APP/RESULTADO_AUDITORIA_01.md` | Resultado registrado |
 | EVID-01 | Evidencia | Will App | `04_EVIDENCIAS/WILL_APP/REFERENCIAS_AUDITORIA_01.md` | Registrada |
 | PROP-01 | Propuesta | Will App | `06_PROPUESTAS/WILL_APP/PROPUESTA_01.md` | Pendiente |
-| INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | **CERRADA — VERDE** (PR Lab #123; Dependabot #4 fixed) |
+| INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | **VERDE — RESUELTA / VERIFICADA** (Lab #123+#124; Dependabot #4 fixed) |
 | EVID-SEC-01 | Evidencia | MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/02_EVIDENCIAS/` | Registrada |
 | DOC-SEC-01 | Corrección documental | INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente · investigación Positron |
 | DOC-SEC-02 | Corrección documental | INT-SEC-01 (sin Argos operativo) | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_02.md` | Aplicada |
 | DOC-SEC-03 | Corrección conclusión | INT-SEC-01 Positron mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_CONCLUSION_PREVIA.md` | Aplicada |
 | DOC-SEC-04 | Resultado final | INT-SEC-01 cierre VERDE | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/RESULTADO_FINAL_VERIFICADO.md` | Cerrada |
+| DOC-SEC-05 | Ejecución remediación | INT-SEC-01 cierre VERDE verificado | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/EJECUCION_REMEDIACION_COMPLETA.md` | Cerrada |
 | INV-SEC-01 | Investigación exposición | Positron Prisma→mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/INVESTIGACION_EXPOSICION_REAL.md` | Registrada |
 | PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | PROPOSED / pendiente de decisión |
 
