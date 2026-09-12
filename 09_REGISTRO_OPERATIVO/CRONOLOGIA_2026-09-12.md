@@ -48,3 +48,7 @@ Se corrigió la formulación de ESTADO de INT-SEC-01: de «VERDE (exposición pr
 ## 12. Corrección documental 02 INT-SEC-01
 
 Se eliminaron de la documentación de INT-SEC-01 las referencias a Argos como vía, responsable, autoridad o destino operativo de la decisión sobre Dependabot. La decisión pendiente queda formulada únicamente como competencia de la autoridad soberana o delegada competente. Motivo: Argos no está construido, no es operativo, no tiene funciones concretas definidas y no es asignable operativamente. Trazabilidad en `CORRECCION_DOCUMENTAL_02.md`.
+
+## 13. Investigación técnica de exposición real (Positron)
+
+Se incorporó la evidencia Dependabot #4: `positron/package-lock.json` contiene `mysql2@3.15.3` vía `prisma@7.10.0` (Development/devOptional). Se corrigió la conclusión previa de «mysql2 no instalado» (válida solo para el alcance graph/Will App). Análisis: provider PostgreSQL; `@prisma/client` sin mysql2; no se demuestra ruta de autenticación MySQL del GHSA; sí se demuestra dependencia vulnerable en tooling. Propuesta de remediación pendiente. Sin modificar Lab ni Dependabot.

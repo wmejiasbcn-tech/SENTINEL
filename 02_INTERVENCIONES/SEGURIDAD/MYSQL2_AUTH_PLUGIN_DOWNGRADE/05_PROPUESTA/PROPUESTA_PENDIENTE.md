@@ -1,28 +1,18 @@
-# Propuesta — INT-SEC-01
+# Propuesta — INT-SEC-01 (actualizada tras investigación Positron)
 
 **Estado:** PROPOSED / PENDIENTE DE DECISIÓN  
-**No ejecutada** por orden expresa del Soberano (2026-09-12).
+**No ejecutada.**
 
-## Acción propuesta (no aplicada)
+## Decisión pendiente
 
-Gestionar administrativamente la alerta Dependabot asociada (referida como #4 / GHSA-3f6p-5ww8-9rcr) como:
+descartar/anotar/mantener u otra decisión determinada por la autoridad soberana o delegada competente — **teniendo en cuenta** que ya no aplica el relato «mysql2 no instalado» a Positron.
 
-- *not applicable*, o  
-- *vulnerable dependency not reachable*,
+## Opciones de remediación (no aplicadas)
 
-justificando:
+1. Esperar Prisma que arrastre `mysql2 >= 3.22.0`.
+2. Override a `mysql2@>=3.22.0` con validación.
+3. Mantener alerta OPEN documentando riesgo tooling vs no-exposición MySQL demostrada.
 
-1. `mysql2` no instalado en el checkout `graph/` examinado;  
-2. solo peer opcional de `better-auth` / `db0`;  
-3. runtime de datos = Postgres/PGLite;  
-4. Will App sin `mysql2`.
+## Prohibido sin mandato nuevo
 
-## Qué NO se debe hacer sin decisión nueva
-
-- Instalar `mysql2` «para silenciar» la alerta.  
-- Modificar `package.json` / lock de Lab o Will App sin mandato.  
-- Alterar configuración de producción.
-
-## Motivo de no ejecución
-
-Orden soberana §3: «NO EJECUTAR LA PROPUESTA» / propuesta en PROPOSED / PENDIENTE DE DECISIÓN.
+Modificar package.json/lock, instalar paquetes, cerrar Dependabot, ejecutar PoC.

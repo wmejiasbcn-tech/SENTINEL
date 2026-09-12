@@ -13,10 +13,12 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | INT-01 | Intervención | Will App | `02_INTERVENCIONES/WILL_APP/RESULTADO_AUDITORIA_01.md` | Resultado registrado |
 | EVID-01 | Evidencia | Will App | `04_EVIDENCIAS/WILL_APP/REFERENCIAS_AUDITORIA_01.md` | Registrada |
 | PROP-01 | Propuesta | Will App | `06_PROPUESTAS/WILL_APP/PROPUESTA_01.md` | Pendiente |
-| INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente |
+| INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente · investigación Positron |
 | EVID-SEC-01 | Evidencia | MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/02_EVIDENCIAS/` | Registrada |
-| DOC-SEC-01 | Corrección documental | INT-SEC-01 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_01.md` | Aplicada |
+| DOC-SEC-01 | Corrección documental | INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente · investigación Positron |
 | DOC-SEC-02 | Corrección documental | INT-SEC-01 (sin Argos operativo) | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_02.md` | Aplicada |
+| DOC-SEC-03 | Corrección conclusión | INT-SEC-01 Positron mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_CONCLUSION_PREVIA.md` | Aplicada |
+| INV-SEC-01 | Investigación exposición | Positron Prisma→mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/INVESTIGACION_EXPOSICION_REAL.md` | Registrada |
 | PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | PROPOSED / pendiente de decisión |
 
 ## Regla de clasificación
