@@ -83,3 +83,9 @@ Por orden soberana, SENTINEL reconstruyó el expediente `TEST_03_AUDITORIA_MATRI
 ## 21. Recontraste TEST-03 contra Matriz primaria
 
 SENTINEL localizó y leyó `Will-AI-Project-Lab/01_FUNDACION/MATRIZ_CANONICA_AGENTES_WAIPL_v1.0_DEFINITIVA.md`. Confirmó OBS-M01/Argos pendiente, ausencia de interfaz Argos↔Heimdall, complemento Argos↔Aegis escrito, y ficha WILLIAM-SCY-01 sin funciones ejecutivas pese al verbo «garantizar». Evidencia en `04_EVIDENCIAS/TEST_03/`. Transcripción íntegra del chat TEST-03: no hallada (UNKNOWN). Expediente TEST-03 actualizado.
+
+## 22. Corrección editorial TEST-03
+
+Se corrigió el residuo editorial detectado en la tabla de fuentes del expediente TEST-03. La formulación que decía «Relectura íntegra del archivo de la Matriz en este turno — No realizada» fue reemplazada por una distinción temporal explícita: **no realizada durante la fase inicial de reconstrucción; sí realizada posteriormente durante el recontraste contra la fuente primaria**. Se añadió una nota de trazabilidad para impedir que la fase inicial se interprete como negación del recontraste posterior.
+
+**Resultado de la corrección:** APLICADA · VERIFIED. Expediente TEST-03 permanece **CERRADO DOCUMENTALMENTE**; no cambia el semáforo sustantivo **AMARILLO** ni los dictámenes ya verificados.
