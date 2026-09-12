@@ -1,12 +1,18 @@
 # SENTINEL
 
-**SENTINEL — Bot auxiliar de verificación, control y auditoría del ecosistema WAIPL. Registro operativo, evidencias, resultados, propuestas y trazabilidad de sus intervenciones.**
+**SENTINEL — Subagente auxiliar de verificación, control y auditoría del ecosistema WAIPL. Registro operativo, evidencias, resultados, propuestas y trazabilidad de sus intervenciones.**
 
 ## Finalidad del repositorio
 
 Este repositorio constituye la **custodia operativa y trazabilidad propia de SENTINEL**.
 
 Todo lo que SENTINEL haga, reciba como orden, analice, concluya, proponga, ejecute, verifique o cierre debe quedar registrado aquí de forma clasificada, separada y consultable.
+
+## Categoría constitutiva
+
+**SUBAGENTE.**
+
+La categoría anterior de BOT queda sustituida por mandato soberano. La definición vigente se encuentra en `00_CONSTITUCION/ACTA_NACIMIENTO_SENTINEL_v1.1.md`.
 
 ## Principio de registro total
 
@@ -60,6 +66,6 @@ No se presenta como hecho aquello que no esté demostrado.
 
 ## Estado actual
 
-**PILOTO V1.1**.
+**SUBAGENTE · PILOTO V1.1**.
 
 El repositorio se encuentra en fase de establecimiento de la trazabilidad operativa inicial.
