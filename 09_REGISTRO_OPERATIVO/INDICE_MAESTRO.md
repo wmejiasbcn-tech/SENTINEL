@@ -10,7 +10,8 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | ORD-01 | Orden | Will App | `01_MANDATOS_Y_ORDENES/ORDEN_01_AUDITORIA_REAL_WILL_APP.md` | Ejecutada |
 | TEST-01 | Prueba | SENTINEL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_01_AUTOVERIFICACION_CONSTITUTIVA.md` | Cerrada |
 | TEST-02 | Prueba | SENTINEL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_02_AUTOVERIFICACION_V1.1.md` | Cerrada |
-| TEST-03 | Prueba | Matriz Canónica de Agentes WAIPL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md` | Cerrada · reconstruida (resultado AMARILLO; H7 recalibrado) |
+| TEST-03 | Prueba | Matriz Canónica de Agentes WAIPL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md` | Cerrada · reconstruida + recontrastada (fuente primaria Lab) |
+| EVID-T03-01 | Evidencia | Matriz Canónica recontraste TEST-03 | `04_EVIDENCIAS/TEST_03/EVIDENCIA_MATRIZ_CANONICA_RECONTRASTE.md` | Registrada |
 | INT-01 | Intervención | Will App | `02_INTERVENCIONES/WILL_APP/RESULTADO_AUDITORIA_01.md` | Resultado registrado |
 | EVID-01 | Evidencia | Will App | `04_EVIDENCIAS/WILL_APP/REFERENCIAS_AUDITORIA_01.md` | Registrada |
 | PROP-01 | Propuesta | Will App | `06_PROPUESTAS/WILL_APP/PROPUESTA_01.md` | Pendiente |

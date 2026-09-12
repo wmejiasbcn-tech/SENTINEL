@@ -4,7 +4,7 @@
 **Fecha de ejecución original:** 2026-09-12  
 **Marco:** SENTINEL V1.1 PILOTO  
 **Objeto:** Matriz Canónica de Agentes WAIPL v1.0 Definitiva  
-**Estado documental:** **RECONSTRUIDO CON RESULTADO ORIGINAL · CERRADO DOCUMENTALMENTE**  
+**Estado documental:** **RECONSTRUIDO + RECONTRASTADO CONTRA FUENTE PRIMARIA · CERRADO DOCUMENTALMENTE**
 **Registro:** `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md`
 
 ## Fuente de esta reconstrucción
@@ -67,3 +67,23 @@ El archivo creado en `953de8d` identificó correctamente la existencia de TEST-0
 Resultado original aportado con etiquetas epistémicas + expediente actualizado + índice + cronología, **sin inventar** hallazgos no presentes en el registro interno de SENTINEL.
 
 Reconstruido: 2026-09-12T23:38:13+02:00 · autoridad: SENTINEL por orden soberana.
+
+## Recontraste contra fuente primaria (2026-09-12T23:41:10+02:00)
+
+**Evidencia:** `04_EVIDENCIAS/TEST_03/EVIDENCIA_MATRIZ_CANONICA_RECONTRASTE.md`  
+**Fuente leída:** `Will-AI-Project-Lab/01_FUNDACION/MATRIZ_CANONICA_AGENTES_WAIPL_v1.0_DEFINITIVA.md`
+
+| Hallazgo TEST-03 | Recontraste con Matriz MD | Dictamen | Estado |
+|---|---|---|---|
+| Detalle funcional Argos pendiente | Texto: detalle completo pendiente + OBS-M01 explícita | **CONFIRMADO** | VERIFIED |
+| Interfaz Argos/Heimdall no especificada | Jurisdicciones distintas (ECOSISTEMA vs NODO CENTRAL FÍSICO); **no** hay protocolo de interfaz Argos↔Heimdall | **CONFIRMADO** | VERIFIED |
+| Frontera Argos/Aegis/Heimdall incompleta desde ficha corta | Argos↔Aegis: hay complemento conceptual (detecta/monitoriza vs protege/aísla); Argos↔Heimdall: sin interfaz; Aegis↔Heimdall: sin interfaz | **PARCIALMENTE MATIZADO** — Aegis sí tiene vínculo funcional escrito con Argos; Heimdall sigue sin interfaz descrita | VERIFIED |
+| H7 WILLIAM-SCY-01 / «garantizar» | Matriz: **Sin funciones operativas ni ejecutivas** + verbo «garantizar» en la misma ficha | Tensión léxica **real en la fuente**; recalibración H7 (**NO CONTRADICTORY** / no ejecutor) **sigue siendo la lectura correcta** ante el texto canónico | VERIFIED |
+| Semáforo AMARILLO / sin infracciones graves | Coherente con OBS-M01 «no bloquea» + observaciones menores de Carla en la propia Matriz | **SOSTENIDO** | VERIFIED |
+| Chat íntegro TEST-03 | No localizado como anexo | Sigue **UNKNOWN** | VERIFIED (ausencia) |
+
+### Conclusión del recontraste
+
+La reconstrucción formal previa **no inventó** los hallazgos: la fuente primaria los sostiene. Se añade un matiz: Argos/Aegis sí tienen delimitación complementaria escrita; lo que sigue fino/incompleto es sobre todo el detalle de Argos (OBS-M01) y cualquier interfaz con Heimdall.
+
+**Semáforo documental TEST-03 tras recontraste:** sigue **AMARILLO** a nivel de objeto (matriz con observaciones menores), con expediente **cerrado documentalmente** y evidencia primaria enlazada.

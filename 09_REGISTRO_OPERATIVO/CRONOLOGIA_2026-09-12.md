@@ -79,3 +79,7 @@ Queda reafirmada la regla de que toda actuación relevante de SENTINEL —orden 
 ## 20. Reconstrucción formal TEST-03
 
 Por orden soberana, SENTINEL reconstruyó el expediente `TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md` con el **resultado original** conservado en su memoria/log de sesión: semáforo **AMARILLO**; problemas menores de delimitación/completitud (Argos, interfaz Argos/Heimdall); ambigüedad léxica inicial en WILLIAM-SCY-01 **recalibrada (H7) a NO CONTRADICTORY**. No se inventaron hallazgos adicionales. El stub pendiente (`953de8d`) queda superado documentalmente. Índice Maestro y esta cronología actualizados.
+
+## 21. Recontraste TEST-03 contra Matriz primaria
+
+SENTINEL localizó y leyó `Will-AI-Project-Lab/01_FUNDACION/MATRIZ_CANONICA_AGENTES_WAIPL_v1.0_DEFINITIVA.md`. Confirmó OBS-M01/Argos pendiente, ausencia de interfaz Argos↔Heimdall, complemento Argos↔Aegis escrito, y ficha WILLIAM-SCY-01 sin funciones ejecutivas pese al verbo «garantizar». Evidencia en `04_EVIDENCIAS/TEST_03/`. Transcripción íntegra del chat TEST-03: no hallada (UNKNOWN). Expediente TEST-03 actualizado.
