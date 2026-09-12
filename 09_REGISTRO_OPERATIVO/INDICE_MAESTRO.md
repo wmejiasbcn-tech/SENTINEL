@@ -15,13 +15,15 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 | PROP-01 | Propuesta | Will App | `06_PROPUESTAS/WILL_APP/PROPUESTA_01.md` | Pendiente |
 | INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | **VERDE — RESUELTA / VERIFICADA** (Lab #123+#124; Dependabot #4 fixed) |
 | EVID-SEC-01 | Evidencia | MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/02_EVIDENCIAS/` | Registrada |
-| DOC-SEC-01 | Corrección documental | INT-SEC-01 | Intervención seguridad | MySQL2 GHSA-3f6p-5ww8-9rcr / Positron | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/` | Resultado verificado · ABIERTA — decisión pendiente · investigación Positron |
-| DOC-SEC-02 | Corrección documental | INT-SEC-01 (sin Argos operativo) | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_02.md` | Aplicada |
-| DOC-SEC-03 | Corrección conclusión | INT-SEC-01 Positron mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_CONCLUSION_PREVIA.md` | Aplicada |
-| DOC-SEC-04 | Resultado final | INT-SEC-01 cierre VERDE | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/RESULTADO_FINAL_VERIFICADO.md` | Cerrada |
-| DOC-SEC-05 | Ejecución remediación | INT-SEC-01 cierre VERDE verificado | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/EJECUCION_REMEDIACION_COMPLETA.md` | Cerrada |
+| DOC-SEC-01 | Corrección documental | INT-SEC-01 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_01.md` | Histórica · sustituida por correcciones posteriores |
+| DOC-SEC-02 | Corrección documental | INT-SEC-01 · sin Argos operativo | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_DOCUMENTAL_02.md` | Aplicada |
+| DOC-SEC-03 | Corrección conclusión | INT-SEC-01 · Positron/mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/CORRECCION_CONCLUSION_PREVIA.md` | Aplicada |
+| DOC-SEC-04 | Resultado final | INT-SEC-01 · cierre VERDE | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/RESULTADO_FINAL_VERIFICADO.md` | Cerrada |
+| DOC-SEC-05 | Ejecución remediación | INT-SEC-01 · cierre VERDE verificado | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/EJECUCION_REMEDIACION_COMPLETA.md` | Cerrada |
 | INV-SEC-01 | Investigación exposición | Positron Prisma→mysql2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/04_RESULTADO/INVESTIGACION_EXPOSICION_REAL.md` | Registrada |
-| PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | PROPOSED / pendiente de decisión |
+| PROP-SEC-01 | Propuesta | Dependabot MySQL2 | `02_INTERVENCIONES/SEGURIDAD/MYSQL2_AUTH_PLUGIN_DOWNGRADE/05_PROPUESTA/PROPUESTA_PENDIENTE.md` | Histórica · superada por remediación |
+| REG-INT-01 | Registro integral | Jornada SENTINEL 2026-09-12 | `09_REGISTRO_OPERATIVO/REGISTRO_INTEGRAL_2026-09-12.md` | Vigente · consolidado |
+| REG-GROK-01 | Exploración | Capacidades Grok Bot relevantes para futuras operaciones | `09_REGISTRO_OPERATIVO/REGISTRO_INTEGRAL_2026-09-12.md` | Observacional · sin incorporación |
 
 ## Regla de clasificación
 
@@ -29,9 +31,15 @@ Las pruebas de SENTINEL, los trabajos operativos sobre objetos externos, las evi
 
 Las intervenciones de seguridad se registran bajo `02_INTERVENCIONES/SEGURIDAD/` y no se clasifican como pruebas de SENTINEL.
 
+Los hitos transversales de la jornada se consolidan en `09_REGISTRO_OPERATIVO/REGISTRO_INTEGRAL_2026-09-12.md` sin sustituir los expedientes específicos.
+
 ## Regla de trazabilidad
 
 Cada actuación futura debe incorporar, cuando sea posible: ID, fecha/hora, orden de origen, objeto, fuente/evidencia, acción realizada, resultado, estado epistemológico, propuesta, decisión, criterio de cierre y referencia al commit que registra el hecho.
+
+## Regla de registro total
+
+Todo lo que SENTINEL reciba como orden, haga, analice, concluya, proponga, ejecute, verifique o cierre debe quedar registrado en el repositorio, clasificado, separado y consultable. Cuando una actuación implique decisiones o cambios de otros agentes/proyectos, se conserva también la referencia necesaria para reconstruir la intervención sin sustituir la custodia del repositorio afectado.
 
 ## Regla constitutiva
 
