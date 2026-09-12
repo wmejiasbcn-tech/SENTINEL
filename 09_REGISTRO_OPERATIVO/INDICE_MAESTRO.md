@@ -4,6 +4,7 @@ Este índice permite reconstruir cronológicamente las actuaciones registradas e
 
 | ID | Tipo | Objeto | Registro | Estado |
 |---|---|---|---|---|
+| ACTA-01 | Constitución | SENTINEL | `00_CONSTITUCION/ACTA_NACIMIENTO_SENTINEL_v1.0.md` | Firmada y canónica |
 | CONST-01 | Constitución | SENTINEL | `00_CONSTITUCION/00_MARCO_CONSTITUTIVO_OPERATIVO_V1.1.md` | Vigente |
 | ORD-01 | Orden | Will App | `01_MANDATOS_Y_ORDENES/ORDEN_01_AUDITORIA_REAL_WILL_APP.md` | Ejecutada |
 | TEST-01 | Prueba | SENTINEL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_01_AUTOVERIFICACION_CONSTITUTIVA.md` | Cerrada |
@@ -19,3 +20,7 @@ Las pruebas de SENTINEL, los trabajos operativos sobre objetos externos, las evi
 ## Regla de trazabilidad
 
 Cada actuación futura debe incorporar, cuando sea posible: ID, fecha/hora, orden de origen, objeto, fuente/evidencia, acción realizada, resultado, estado epistemológico, propuesta, decisión, criterio de cierre y referencia al commit que registra el hecho.
+
+## Regla constitutiva
+
+Toda entidad nueva de SENTINEL o toda modificación relevante de su marco constitutivo debe conservar su correspondiente registro documental y, cuando aplique, su Acta de Nacimiento o referencia a ella.
