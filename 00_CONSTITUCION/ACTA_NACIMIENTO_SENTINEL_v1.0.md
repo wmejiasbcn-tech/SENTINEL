@@ -206,7 +206,7 @@ La presente Acta no sustituye dichos documentos. Formaliza el nacimiento de SENT
 
 ## 12. REFERENCIAS CANÓNICAS DE NACIMIENTO
 
-La formalización de esta Acta se realiza tomando como fuente directa la infraestructura documental WAIPL que establece el uso de Actas de Nacimiento para registrar formalmente el nacimiento de un **agente, proyecto, skill o artefacto nuevo**. La plantilla canónica exige, entre otros elementos, identidad, versión, fecha, autoridad, descripción, objetivo, alcance, exclusiones, criterio de éxito, criterio de parada, dependencias, riesgos, fuentes versionadas y firma de la autoridad correspondiente. 
+La formalización de esta Acta se realiza tomando como fuente directa la infraestructura documental WAIPL que establece el uso de Actas de Nacimiento para registrar formalmente el nacimiento de un **agente, proyecto, skill o artefacto nuevo**. La plantilla canónica exige, entre otros elementos, identidad, versión, fecha, autoridad, descripción, objetivo, alcance, exclusiones, criterio de éxito, criterio de parada, dependencias, riesgos, fuentes versionadas y firma de la autoridad correspondiente.
 
 Fuentes localizadas:
 
@@ -214,8 +214,6 @@ Fuentes localizadas:
 - `Will-AI-Project-Lab/00_SISTEMA/CHECKLISTS/checklist_superplantilla_v3.md`
 - `Will-AI-Project-Lab/00_SISTEMA/CHECKLISTS/README.md`
 - `WAIPL-OS/projects/active/WAIPL-Obsidian-Skills/00-SOBERANIA/ACTA-NACIMIENTO.md` — referencia de aplicación efectiva y firma soberana mediante commit.
-
-La plantilla canónica define expresamente el Acta de Nacimiento como mecanismo para registrar el nacimiento formal de una entidad nueva y exige la firma de la autoridad correspondiente. fileciteturn36file0
 
 ---
 
@@ -241,7 +239,7 @@ La plantilla canónica define expresamente el Acta de Nacimiento como mecanismo 
 
 - **v1.0 — 2026-09-12 15:24 CEST — Nacimiento constitutivo y canónico de SENTINEL.**
 
-**Referencia Git:** el commit que incorpora esta Acta constituye su registro documental y su evidencia de trazabilidad.
+**Referencia Git:** commit `282b9d702c93f3e7c74869a96c0e53749ce97bdc` — registro inicial del Acta. Cualquier corrección posterior queda registrada mediante un nuevo commit y no altera la trazabilidad del nacimiento.
 
 ---
 
