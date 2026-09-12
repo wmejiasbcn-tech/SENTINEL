@@ -4,7 +4,7 @@
 **Fecha de ejecución original:** 2026-09-12  
 **Marco:** SENTINEL V1.1 PILOTO  
 **Objeto:** Matriz Canónica de Agentes WAIPL v1.0 Definitiva  
-**Estado documental:** **RECONSTRUIDO + RECONTRASTADO CONTRA FUENTE PRIMARIA · CERRADO DOCUMENTALMENTE**
+**Estado documental:** **RECONSTRUIDO + RECONTRASTADO CONTRA FUENTE PRIMARIA · CERRADO DOCUMENTALMENTE**  
 **Registro:** `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md`
 
 ## Fuente de esta reconstrucción
@@ -13,10 +13,12 @@
 |---|---|---|
 | Memoria durable / log de sesión de SENTINEL sobre la ejecución TEST 03 del 2026-09-12 | Resultado, semáforo, hallazgos y recalibración H7 | VERIFIED como registro interno de SENTINEL |
 | Expediente stub previo (commit `953de8d`, Carla) | Conserva la omisión documental y el criterio de no inventar | VERIFIED (histórico del expediente) |
-| Relectura íntegra del archivo de la Matriz en este turno | No realizada | UNKNOWN / no pretendida aquí |
+| Relectura íntegra del archivo de la Matriz en el recontraste posterior | No realizada en la fase de reconstrucción inicial; **sí realizada posteriormente en el recontraste de 2026-09-12** | VERIFIED en la fase de recontraste |
 | Transcripción completa del chat original pegada en este repo | No materializada como anexo | UNKNOWN en el repositorio |
 
-**Regla:** no se inventan hallazgos. Todo hallazgo concreto abajo procede del registro interno de SENTINEL de aquella prueba. Donde el detalle fino no esté en ese registro, se marca UNKNOWN.
+**Nota de trazabilidad:** la fila anterior sobre la relectura corresponde exclusivamente al estado de la **fase de reconstrucción inicial**. No significa que la Matriz no fuera leída posteriormente: el apartado «Recontraste contra fuente primaria» y la evidencia enlazada documentan que la fuente primaria sí fue localizada y leída después.
+
+**Regla:** no se inventan hallazgos. Todo hallazgo concreto abajo procede del registro interno de SENTINEL de aquella prueba o del recontraste posterior contra la fuente primaria. Donde el detalle fino no esté disponible, se marca UNKNOWN.
 
 ## Objeto y secuencia (ejecución original)
 
@@ -47,7 +49,7 @@
 
 - Texto íntegro de cada párrafo emitido en el chat original — **UNKNOWN** en este expediente.
 - Lista exhaustiva de todos los nodos de la Matriz revisados uno a uno — **UNKNOWN** (no está en el resumen durable recuperado).
-- Citas verbatim de la Matriz PDF/fuente canónica — **no inventadas**; no se adjuntan en este turno.
+- Citas verbatim de la Matriz PDF/fuente canónica en la fase inicial — **no inventadas**; posteriormente se incorporaron extractos verificables en `04_EVIDENCIAS/TEST_03/EVIDENCIA_MATRIZ_CANONICA_RECONTRASTE.md`.
 
 ## Relación con el stub previo
 
@@ -87,3 +89,9 @@ Reconstruido: 2026-09-12T23:38:13+02:00 · autoridad: SENTINEL por orden soberan
 La reconstrucción formal previa **no inventó** los hallazgos: la fuente primaria los sostiene. Se añade un matiz: Argos/Aegis sí tienen delimitación complementaria escrita; lo que sigue fino/incompleto es sobre todo el detalle de Argos (OBS-M01) y cualquier interfaz con Heimdall.
 
 **Semáforo documental TEST-03 tras recontraste:** sigue **AMARILLO** a nivel de objeto (matriz con observaciones menores), con expediente **cerrado documentalmente** y evidencia primaria enlazada.
+
+## Corrección editorial posterior — 2026-09-12
+
+Se corrigió el residuo editorial detectado en la tabla de fuentes: la frase «Relectura íntegra del archivo de la Matriz en este turno — No realizada» podía leerse como si negara la relectura posterior ya documentada. Se reemplazó por una formulación que distingue explícitamente la **fase inicial de reconstrucción** del **recontraste posterior contra fuente primaria**.
+
+**Estado de la corrección:** APLICADA · VERIFIED por actualización del expediente.
