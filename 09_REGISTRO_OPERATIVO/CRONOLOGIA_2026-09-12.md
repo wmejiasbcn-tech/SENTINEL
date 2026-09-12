@@ -2,7 +2,7 @@
 
 ## 1. Constitución y piloto
 
-SENTINEL fue establecido por decisión soberana como bot auxiliar de verificación/control/auditoría en período piloto V1.0 y posteriormente recalibrado a V1.1.
+SENTINEL fue establecido por decisión soberana como subagente auxiliar de verificación/control/auditoría en período piloto V1.0 y posteriormente recalibrado a V1.1.
 
 ## 2. TEST 01
 
@@ -26,8 +26,12 @@ La intervención de Will App quedó registrada en su carpeta propia dentro de `0
 
 ## 7. Acta de Nacimiento Constitutiva y Canónica
 
-El 12 de septiembre de 2026 a las 15:24 CEST, William Mejías Navarro, Soberano del ecosistema WAIPL, declaró el **Acta de Nacimiento Constitutiva y Canónica de SENTINEL v1.0**. El Acta formaliza su naturaleza, función, límites, estados epistemológicos, criterio de éxito, criterio de parada, dependencias y régimen de trazabilidad. Registro principal: `00_CONSTITUCION/ACTA_NACIMIENTO_SENTINEL_v1.0.md`.
+El 12 de septiembre de 2026 a las 15:24 CEST, William Mejías Navarro, Soberano del ecosistema WAIPL, declaró el **Acta de Nacimiento Constitutiva y Canónica de SENTINEL v1.0**. El Acta formaliza su naturaleza, función, límites, estados epistemológicos, criterio de éxito, criterio de parada, dependencias y régimen de trazabilidad.
 
-## 8. Regla permanente
+## 8. Rectificación soberana de categoría
+
+Por mandato soberano posterior, la categoría constitutiva de SENTINEL queda establecida como **SUBAGENTE**. La categoría anterior de BOT queda sustituida y deja de ser la clasificación vigente. La Acta vigente es `00_CONSTITUCION/ACTA_NACIMIENTO_SENTINEL_v1.1.md`.
+
+## 9. Regla permanente
 
 A partir de esta fecha, toda actuación de SENTINEL deberá quedar registrada en el repositorio, clasificada y trazabilizada, evitando mezclar actividades distintas en una única carpeta o documento.
