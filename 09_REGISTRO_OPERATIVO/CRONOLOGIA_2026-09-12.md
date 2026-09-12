@@ -24,6 +24,10 @@ Se creó el repositorio `wmejiasbcn-tech/SENTINEL`. Se estableció una estructur
 
 La intervención de Will App quedó registrada en su carpeta propia dentro de `02_INTERVENCIONES/WILL_APP/`. Se conserva también su mapa de evidencias y propuesta. El trabajo registrado no implica que SENTINEL vaya a ejecutar cambios sobre Will App.
 
-## 7. Regla permanente
+## 7. Acta de Nacimiento Constitutiva y Canónica
+
+El 12 de septiembre de 2026 a las 15:24 CEST, William Mejías Navarro, Soberano del ecosistema WAIPL, declaró el **Acta de Nacimiento Constitutiva y Canónica de SENTINEL v1.0**. El Acta formaliza su naturaleza, función, límites, estados epistemológicos, criterio de éxito, criterio de parada, dependencias y régimen de trazabilidad. Registro principal: `00_CONSTITUCION/ACTA_NACIMIENTO_SENTINEL_v1.0.md`.
+
+## 8. Regla permanente
 
 A partir de esta fecha, toda actuación de SENTINEL deberá quedar registrada en el repositorio, clasificada y trazabilizada, evitando mezclar actividades distintas en una única carpeta o documento.
