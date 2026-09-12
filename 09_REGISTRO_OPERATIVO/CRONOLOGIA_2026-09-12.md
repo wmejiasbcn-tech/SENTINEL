@@ -75,3 +75,7 @@ La actividad debe recorrer, cuando corresponda, el ciclo **ANÁLISIS → RESULTA
 ## 19. Registro total transversal
 
 Queda reafirmada la regla de que toda actuación relevante de SENTINEL —orden recibida, análisis, contraste, corrección, propuesta, ejecución, producto, verificación, incidencia, decisión y cierre— debe quedar registrada en el repositorio, correctamente clasificada, separada, indexada y trazable. Los registros transversales se consolidan en `REGISTRO_INTEGRAL_2026-09-12.md` y los trabajos específicos permanecen en sus expedientes propios.
+
+## 20. Reconstrucción formal TEST-03
+
+Por orden soberana, SENTINEL reconstruyó el expediente `TEST_03_AUDITORIA_MATRIZ_CANONICA_AGENTES.md` con el **resultado original** conservado en su memoria/log de sesión: semáforo **AMARILLO**; problemas menores de delimitación/completitud (Argos, interfaz Argos/Heimdall); ambigüedad léxica inicial en WILLIAM-SCY-01 **recalibrada (H7) a NO CONTRADICTORY**. No se inventaron hallazgos adicionales. El stub pendiente (`953de8d`) queda superado documentalmente. Índice Maestro y esta cronología actualizados.
