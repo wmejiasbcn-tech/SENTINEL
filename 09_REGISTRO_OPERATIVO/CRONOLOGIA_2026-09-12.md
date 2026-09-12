@@ -52,3 +52,7 @@ Se eliminaron de la documentación de INT-SEC-01 las referencias a Argos como v�
 ## 13. Investigación técnica de exposición real (Positron)
 
 Se incorporó la evidencia Dependabot #4: `positron/package-lock.json` contiene `mysql2@3.15.3` vía `prisma@7.10.0` (Development/devOptional). Se corrigió la conclusión previa de «mysql2 no instalado» (válida solo para el alcance graph/Will App). Análisis: provider PostgreSQL; `@prisma/client` sin mysql2; no se demuestra ruta de autenticación MySQL del GHSA; sí se demuestra dependencia vulnerable en tooling. Propuesta de remediación pendiente. Sin modificar Lab ni Dependabot.
+
+## 14. INT-SEC-01 — Remediación y cierre VERDE
+
+Vía: npm overrides `mysql2@3.24.4` en Positron (Prisma 7.10 conservado; Prisma 8 RC descartado). PR Lab #123 mergeado (SHA `35859e4`). Lock: mysql2 3.15.3 → 3.24.4. Dependabot #4 = fixed; alertas OPEN = 0. Pruebas: override y audit OK; fallos generate/build preexistentes del scaffold. Intervención **CERRADA — VERDE**.
