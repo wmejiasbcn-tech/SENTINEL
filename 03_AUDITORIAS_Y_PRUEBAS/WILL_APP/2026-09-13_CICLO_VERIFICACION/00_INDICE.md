@@ -1,4 +1,4 @@
-# Índice — Ciclo verificación Will App · 2026-09-13
+﻿# Índice — Ciclo verificación Will App · 2026-09-13
 
 **Objeto:** Agente-Will-App  
 **Jurisdicción:** SENTINEL N1 (inspección / contraste)  
@@ -15,6 +15,7 @@
 | [AUD-WILL-CARLA-03](./CARLA/AUD-WILL-CARLA-03_seguridad_esbuild_overrides_c8e35ee.md) | esbuild + overrides + CI | VERDE (matices) |
 | [AUD-WILL-CARLA-04](./CARLA/AUD-WILL-CARLA-04_codeql_cuatro_alertas_24a6f60.md) | CodeQL 4 alertas | VERDE código / AMARILLO panel |
 | [AUD-WILL-CARLA-05](./CARLA/AUD-WILL-CARLA-05_codeql_remate_4_y_5_7ad5e943.md) | Remate #4/#5 | VERDE remediación / AMARILLO Vercel |
+| [AUD-WILL-CARLA-06](./CARLA/AUD-WILL-CARLA-06_contenido_voz_d222246.md) | Contenido recalibrado + barge-in prep d222246 | VERDE contenido / AMARILLO voz |
 
 ### AETHER/
 
