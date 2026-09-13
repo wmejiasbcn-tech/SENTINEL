@@ -1,12 +1,10 @@
 # Auditorías y pruebas
 
-Esta carpeta contiene exclusivamente pruebas y auditorías de SENTINEL o de carácter metodológico/experimental claramente identificadas como tales.
-
-No se mezclan aquí los trabajos operativos reales sobre productos o proyectos.
-
 ## Separación
 
-- `SENTINEL/` — autoverificaciones y pruebas de comportamiento de SENTINEL.
-- `WILL_APP/` — solo si en el futuro se ordena una prueba específica diferenciada del trabajo operativo ya registrado en `02_INTERVENCIONES/WILL_APP/`.
+- `SENTINEL/` — autoverificaciones y pruebas de comportamiento de SENTINEL (TEST_01, TEST_02, TEST_03, …).
+- `WILL_APP/` — verificaciones N1 de declaraciones, commits y estado de Agente-Will-App, clasificadas por ciclo y por fuente (Carla / Aether / …).
 
-La auditoría operativa real de Will App ya realizada se conserva como intervención, no como prueba de SENTINEL.
+Las intervenciones de remediación operativa (p. ej. INT-SEC-01 en Lab/Positron, o expedientes de remediación Will) se conservan en `02_INTERVENCIONES/`, con enlace al ciclo de verificación cuando corresponda.
+
+Norma: `00_CONSTITUCION/NORMA_ARCHIVO_POR_OBJETO_Y_FUENTE_v1.0.md` (mandato soberano 2026-09-13).
