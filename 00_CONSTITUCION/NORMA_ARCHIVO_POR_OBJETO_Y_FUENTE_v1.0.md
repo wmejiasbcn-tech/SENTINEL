@@ -16,6 +16,7 @@ Cada objeto o frente de trabajo tiene **carpeta propia**.
 |---|---|
 | Autopruebas / metodología SENTINEL | `03_AUDITORIAS_Y_PRUEBAS/SENTINEL/` |
 | Verificaciones de declaraciones sobre Will App | `03_AUDITORIAS_Y_PRUEBAS/WILL_APP/<CICLO>/` |
+| Verificaciones documentales Lab / ecosistema WAIPL | `03_AUDITORIAS_Y_PRUEBAS/LAB_ECOSISTEMA/<CICLO>/` |
 | Intervenciones de remediación (p. ej. INT-SEC-01) | `02_INTERVENCIONES/...` (expediente de intervención) |
 
 No mezclar autopruebas de SENTINEL con verificaciones de producto de terceros en el mismo saco documental.
