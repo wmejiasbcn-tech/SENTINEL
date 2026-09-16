@@ -12,4 +12,5 @@
 | FINAL-STATE-CONTRACT | PROPIA | `IMPL_FINAL_STATE_CONTRACT.md` + norma FINAL_STATE_CONTRACT | machine-checkable |
 | AUD-ARQ-PROPIA-02 | PROPIA | `PROPIA/AUD-ARQ-PROPIA-02_adversarial_bypass_gate_v1.md` | Bypass R6 corregido; 18 tests OK |
 | AUD-WILL-GATE-DEPLOY-01 | PROPIA | `../../WILL_APP/2026-09-16_GATE_VERCEL_PYTHON/PROPIA/AUD-WILL-GATE-DEPLOY-01_preview_bloqueado_y_correccion.md` | AMARILLO — Preview/prod no acreditados |
+| AUD-WILL-RAG-AUTOCLAW-01 | PROPIA | `../../WILL_APP/2026-09-16_WILL_RAG_AUTOCLAW/PROPIA/AUD-WILL-RAG-AUTOCLAW-01_ciclo_completo_y_cierre_carga.md` | AMARILLO / VERDE parcial inicio carga |
 
