@@ -1,11 +1,14 @@
 {
-  "gate": "WAIPL_VERIFICATION_GATE_v1.0",
-  "entry_point": "gate_close.close_case",
-  "timestamp_utc": "2026-09-16T03:09:10Z",
+  "state": "VERDE",
+  "closed": true,
+  "open": false,
+  "result_status": "PRESENTE",
+  "evidence_status": "SUFICIENTE",
+  "verification_status": "CONFORME",
+  "dictamen_status": "CERRABLE",
+  "gate_status": "AUTHORIZED",
+  "mandatory_requirements_pending": [],
+  "gate_ref": "gate:v1.0:7ee49f0db04aadeb",
   "case_id": "CASE_ALL_CONFORME",
-  "semaforo": "VERDE",
-  "CLOSED": true,
-  "OPEN": false,
-  "sha256": "a6566643d5b01539ba7444f3dafcaddd0ccf575985ae4818b32e889103f4a837",
-  "pending_mandatory": []
+  "timestamp_utc": "2026-09-16T03:13:44Z"
 }

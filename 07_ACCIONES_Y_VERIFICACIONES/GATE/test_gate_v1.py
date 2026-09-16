@@ -1,78 +1,90 @@
 #!/usr/bin/env python3
-"""Tests Gate v1.0 — evaluador + cierre operacional obligatorio."""
-
 from __future__ import annotations
 
 import json
-import tempfile
 import unittest
 from pathlib import Path
 
-from gate_close import GateBypassError, assert_no_alternate_close_api, close_case, close_case_file
-from gate_evaluate import evaluate
+from final_state import REQUIRED_FIELDS, build_final_state
+from gate_close import assert_no_alternate_close_api, close_case
 
 HERE = Path(__file__).resolve().parent
 CASES = HERE / "cases"
 
 
-class TestGateEvaluate(unittest.TestCase):
-    def test_aud_lab_carla_01_cannot_close(self):
-        case = json.loads((CASES / "AUD-LAB-CARLA-01.json").read_text(encoding="utf-8"))
-        out = evaluate(case)
-        self.assertEqual(out["semaforo"], "AMARILLO")
-        self.assertFalse(out["CLOSED"])
-
-    def test_all_conforme_closes_verde(self):
-        case = json.loads((CASES / "CASE_ALL_CONFORME.json").read_text(encoding="utf-8"))
-        out = evaluate(case)
-        self.assertEqual(out["semaforo"], "VERDE")
-        self.assertTrue(out["CLOSED"])
-
-
-class TestGateCloseOperational(unittest.TestCase):
-    """El Gate gobierna el cierre: no hay ruta alternativa a VERDE/CLOSED."""
-
-    def test_close_aud_lab_carla_01(self):
+class TestFinalStateContract(unittest.TestCase):
+    def test_aud_lab_carla_01_contract(self):
         case = json.loads((CASES / "AUD-LAB-CARLA-01.json").read_text(encoding="utf-8"))
         out = close_case(case)
-        self.assertEqual(out["semaforo"], "AMARILLO")
-        self.assertFalse(out["CLOSED"])
-        self.assertTrue(out["OPEN"])
-        self.assertEqual(out["closure_entry_point"], "gate_close.close_case")
-        self.assertIn("receipt", out)
+        for f in REQUIRED_FIELDS:
+            self.assertIn(f, out)
+        self.assertNotEqual(out["state"], "VERDE")
+        self.assertFalse(out["closed"])
+        self.assertTrue(out["open"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
+        self.assertEqual(out["state"], "AMARILLO")
+        ids = {p["id"] for p in out["mandatory_requirements_pending"]}
+        self.assertIn("codex_ley_como_fichero", ids)
+        self.assertIn("corpus_audio_este_chat", ids)
 
-    def test_bypass_force_verde_blocked(self):
+    def test_all_conforme_contract(self):
+        case = json.loads((CASES / "CASE_ALL_CONFORME.json").read_text(encoding="utf-8"))
+        out = close_case(case)
+        self.assertEqual(out["state"], "VERDE")
+        self.assertTrue(out["closed"])
+        self.assertFalse(out["open"])
+        self.assertEqual(out["gate_status"], "AUTHORIZED")
+        self.assertEqual(out["result_status"], "PRESENTE")
+        self.assertEqual(out["evidence_status"], "SUFICIENTE")
+        self.assertEqual(out["verification_status"], "CONFORME")
+        self.assertEqual(out["dictamen_status"], "CERRABLE")
+        self.assertEqual(out["mandatory_requirements_pending"], [])
+
+    def test_bypass_blocked(self):
         case = json.loads((CASES / "AUD-LAB-CARLA-01.json").read_text(encoding="utf-8"))
         out = close_case(case, force_verde=True, force_closed=True, desired_semaforo="VERDE")
-        self.assertEqual(out["semaforo"], "AMARILLO")
-        self.assertFalse(out["CLOSED"])
-        self.assertTrue(out["OPEN"])
+        self.assertFalse(out["closed"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
         self.assertTrue(out.get("bypass_attempt", {}).get("blocked"))
 
     def test_injected_closed_ignored(self):
-        """Si el case JSON trae CLOSED/semaforo, evaluate/close no los usan como autoridad."""
         case = json.loads((CASES / "AUD-LAB-CARLA-01.json").read_text(encoding="utf-8"))
+        case["closed"] = True
+        case["state"] = "VERDE"
         case["CLOSED"] = True
-        case["semaforo"] = "VERDE"
         out = close_case(case)
-        self.assertFalse(out["CLOSED"])
-        self.assertEqual(out["semaforo"], "AMARILLO")
+        self.assertFalse(out["closed"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
 
-    def test_close_all_conforme(self):
+    def test_rojo_cannot_close(self):
+        case = {
+            "id": "fail",
+            "resultado": True,
+            "evidencia": True,
+            "verificacion": True,
+            "dictamen": True,
+            "confirmed_failure": True,
+            "requisitos_obligatorios": [{"id": "x", "estado": "CONFORME"}],
+        }
+        out = close_case(case)
+        self.assertEqual(out["state"], "ROJO")
+        self.assertFalse(out["closed"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
+
+    def test_fail_safe_ambiguous(self):
+        out = build_final_state({"id": "amb", "ambiguous_final_state": True})
+        self.assertFalse(out["closed"])
+        self.assertTrue(out["open"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
+        self.assertNotEqual(out["state"], "VERDE")
+
+    def test_human_acceptance_required_blocks(self):
         case = json.loads((CASES / "CASE_ALL_CONFORME.json").read_text(encoding="utf-8"))
+        case["human_acceptance_required"] = True
+        case["human_acceptance"] = False
         out = close_case(case)
-        self.assertEqual(out["semaforo"], "VERDE")
-        self.assertTrue(out["CLOSED"])
-        self.assertFalse(out["OPEN"])
-        self.assertTrue(out["authorized"])
-
-    def test_receipt_file_written(self):
-        with tempfile.TemporaryDirectory() as td:
-            src = Path(td) / "case.json"
-            src.write_text((CASES / "CASE_ALL_CONFORME.json").read_text(encoding="utf-8"), encoding="utf-8")
-            out = close_case_file(src)
-            self.assertTrue(out["CLOSED"])
-            self.assertTrue(Path(out["receipt_path"]).is_file())
+        self.assertFalse(out["closed"])
+        self.assertEqual(out["gate_status"], "BLOCKED")
 
     def test_no_forbidden_apis(self):
         assert_no_alternate_close_api()

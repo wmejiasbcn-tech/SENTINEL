@@ -1,11 +1,12 @@
 {
   "id": "CASE_ALL_CONFORME",
-  "descripcion": "Todos los requisitos obligatorios CONFORME/VERIFICADO",
   "resultado": true,
   "evidencia": true,
   "verificacion": true,
   "dictamen": true,
-  "verificador": "SENTINEL N1",
+  "result_ref": "CASE_ALL_CONFORME",
+  "evidence_refs": ["fixture"],
+  "dictamen_ref": "CASE_ALL_CONFORME",
   "requisitos_obligatorios": [
     {"id": "req_a", "estado": "CONFORME"},
     {"id": "req_b", "estado": "VERIFICADO"},
