@@ -19,16 +19,6 @@ PENDING = {
     "NO-VERIFICADO",
 }
 
-OK = {
-    "CONFORME",
-    "VERIFICADO",
-    "VERDE",
-    "NO_APLICA",
-    "NO APLICA",
-    "N/A",
-    "SATISFECHO",
-}
-
 
 def _norm(value: Any) -> str:
     return str(value or "").strip().upper().replace("-", "_").replace(" ", "_")
@@ -39,7 +29,6 @@ def _pending_state(estado: Any) -> bool:
     n_spaces = str(estado or "").strip().upper()
     if n in {_norm(x) for x in PENDING} or n_spaces in PENDING:
         return True
-    # explicit NO VERIFICADO variants already covered
     if "NO_VERIFICADO" in n or n_spaces == "NO VERIFICADO":
         return True
     return False
@@ -70,7 +59,7 @@ def evaluate(case: dict[str, Any]) -> dict[str, Any]:
     pieces_ok = all(pieces.values())
     no_pending = len(pending) == 0
     closed = pieces_ok and no_pending and len(reqs) > 0
-    # Empty mandatory list cannot close: nothing demonstrated as required+satisfied
+
     if len(reqs) == 0:
         closed = False
 

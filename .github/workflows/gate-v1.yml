@@ -1,0 +1,27 @@
+name: WAIPL Verification Gate v1.0
+on:
+  push:
+    paths:
+      - "07_ACCIONES_Y_VERIFICACIONES/GATE/**"
+      - "00_CONSTITUCION/WAIPL_VERIFICATION_GATE_v1.0.md"
+      - ".github/workflows/gate-v1.yml"
+  pull_request:
+    paths:
+      - "07_ACCIONES_Y_VERIFICACIONES/GATE/**"
+      - "00_CONSTITUCION/WAIPL_VERIFICATION_GATE_v1.0.md"
+jobs:
+  gate-tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 07_ACCIONES_Y_VERIFICACIONES/GATE
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: unittest Gate v1.0
+        run: python -m unittest test_gate_v1.py -v
+      - name: bypass must fail to close AUD-LAB-CARLA-01
+        run: |
+          python gate_close.py cases/AUD-LAB-CARLA-01.json --force-verde; test $? -eq 1

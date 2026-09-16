@@ -20,8 +20,6 @@ El semáforo deja de ser solo indicador de evaluación y pasa a ser **barrera de
 - `NO VERIFICADO`
 - o equivalente (`UNKNOWN`, `PENDING`, `INCOMPLETE`, …)
 
-Lógica mínima:
-
 ```text
 RESULTADO PRESENTE
 + EVIDENCIA SUFICIENTE
@@ -32,49 +30,33 @@ RESULTADO PRESENTE
 VERDE / CLOSED = true
 ```
 
-En cualquier otro caso:
+En cualquier otro caso: **AMARILLO / OPEN** (`CLOSED = false`).
 
-```text
-AMARILLO / OPEN = true  (CLOSED = false)
-```
+## 3. Punto exacto del circuito (cierre operacional)
 
-`PARCIAL` / `DESCONOCIDO` / `NO VERIFICADO` → **NO CERRAR**.  
-No se convierten automáticamente en ROJO; pueden permanecer AMARILLO/OPEN.
+**Única API autorizada de cierre:**
 
-## 3. Piezas obligatorias del Gate
+`07_ACCIONES_Y_VERIFICACIONES/GATE/gate_close.py` → función `close_case()` / CLI `gate_close.py`
 
-| Pieza | Significado mínimo |
-|---|---|
-| `resultado` | Afirmación de resultado presente |
-| `evidencia` | Evidencia suficiente citada |
-| `verificacion` | Verificación ejecutada (quién/qué) |
-| `dictamen` | Dictamen emitido y cerrable en forma |
-| `requisitos_obligatorios[]` | Lista de requisitos con `estado` |
+Reglas:
 
-Un requisito obligatorio está **pendiente** si su `estado` normalizado ∈ {PARCIAL, DESCONOCIDO, NO_VERIFICADO} o equivalentes.
+1. Todo intento de declarar `VERDE` / `CLOSED=true` en el circuito SENTINEL **debe** pasar por `close_case()`.
+2. `close_case()` llama siempre a `gate_evaluate.evaluate()` y **ignora** cualquier `force_verde`, `force_closed`, `desired_semaforo` o campos `CLOSED`/`semaforo` inyectados en el case.
+3. No existen APIs `set_closed` / `force_close` / `mark_verde` / `declare_verde` en el módulo de Gate.
+4. Un dictamen que afirme `VERDE/CLOSED` **sin** receipt emitido por `close_case` es **no conforme** bajo esta norma.
 
-Estados que **permiten** cierre (si el resto del Gate está completo): `CONFORME`, `VERIFICADO`, `VERDE` (solo como etiqueta de requisito satisfecho), `NO_APLICA` (si el alcance lo excluye explícitamente).
+Evaluador: `gate_evaluate.py` (cálculo).  
+Cierre: `gate_close.py` (gobernanza + receipt).
 
 ## 4. Jurisdicciones (inalteradas)
 
-- **Vár** = agente de la verdad: audita tutirimundachi (agentes, resultados, afirmaciones, evidencias vs fuentes).
-- **Validadores** = validan su objeto de diseño.
-- **Yata** = audita a los **validadores**; **no** audita agentes directamente.
-- **SENTINEL** = contraste/verificación N1 y aplicación de esta puerta en sus dictámenes; no sustituye a Vár ni a Yata.
-- **Soberano** = autoridad final cuando la arquitectura exige decisión humana.
+- **Vár** = verdad / auditoría de agentes, resultados y fuentes.
+- **Yata** = auditoría de los **validadores** (no de agentes).
+- **SENTINEL** = contraste N1 + aplicación de esta puerta.
+- **Soberano** = autoridad final cuando corresponda.
 
-## 5. Implementación en circuito SENTINEL
+## 5. Criterio de conformidad operacional
 
-Evaluador ejecutable:
+El Gate está **operativamente cerrado** solo cuando los tests demuestran que:
 
-`07_ACCIONES_Y_VERIFICACIONES/GATE/gate_evaluate.py`
-
-Casos y tests de aceptación en el mismo directorio.
-
-## 6. Historia
-
-Expedientes cerrados en VERDE **antes** de esta norma no se reescriben en silencio. Si bajo Gate v1.0 habrían quedado AMARILLO/OPEN, se registra errata/corrección explícita (p. ej. `AUD-LAB-CARLA-01`).
-
-## 7. Criterio de conformidad de esta norma
-
-Esta norma está **operativa** cuando el test de aceptación demuestra que SENTINEL **no puede** declarar `CLOSED=true` / VERDE si existe un requisito obligatorio no verificado.
+> **el circuito no puede producir `CLOSED=true` si el Gate no lo autoriza**, incluso ante intento explícito de bypass.

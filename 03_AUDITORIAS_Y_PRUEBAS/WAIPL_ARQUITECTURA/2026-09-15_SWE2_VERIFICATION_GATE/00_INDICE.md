@@ -8,4 +8,5 @@
 | AUD-ARQ-CARLA-02 | CARLA | `CARLA/AUD-ARQ-CARLA-02_gate_piezas_vs_operativo.md` | VERDE/CONFORME (matiz tabla Sí=Arnés, no Gate SENTINEL) |
 | AUD-ARQ-PROPIA-01 | PROPIA | `PROPIA/AUD-ARQ-PROPIA-01_gate5q_AUD-LAB-CARLA-01.md` | AMARILLO — falta puerta de cierre (Q5) |
 | IMPL-GATE-v1.0 | PROPIA | `IMPL_GATE_v1.0.md` + `07_ACCIONES_Y_VERIFICACIONES/GATE/` | VERDE operativo (tests OK) |
+| IMPL-GATE-v1.0-CIERRE | PROPIA | `IMPL_GATE_v1.0_CIERRE_OPERACIONAL.md` | Gate gobierna cierre (bypass bloqueado) |
 
