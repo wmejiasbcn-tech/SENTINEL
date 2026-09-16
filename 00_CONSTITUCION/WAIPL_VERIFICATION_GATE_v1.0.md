@@ -17,3 +17,8 @@
 > **No Gate authorization, no closure.**
 
 Jurisdicciones inalteradas: Vár = verdad; Yata = audita validadores (no agentes).
+
+
+## Receipt binding
+
+Cierre persistido solo vía `receipt.bind_receipt` + `gate_close.accept_closure` / `verify_receipt`. Reutilizar o forjar receipts → BLOCKED.

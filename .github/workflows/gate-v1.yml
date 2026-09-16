@@ -15,6 +15,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python -m unittest test_gate_v1.py -v
-      - run: |
+      - name: unit + adversarial
+        run: |
+          python -m unittest test_gate_v1.py test_adversarial_bypass.py -v
+      - name: force-verde must not close AUD-LAB-CARLA-01
+        run: |
           python gate_close.py cases/AUD-LAB-CARLA-01.json --force-verde; test $? -eq 1
+      - name: validate receipts on disk against live Gate
+        run: |
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          from receipt import verify_receipt
+          cases = Path("cases")
+          failed = 0
+          for receipt_path in cases.glob("*.gate_receipt.json"):
+              case_path = Path(str(receipt_path).replace(".gate_receipt.json", ""))
+              if not case_path.exists():
+                  print("ORPHAN_RECEIPT", receipt_path); failed += 1; continue
+              case = json.loads(case_path.read_text(encoding="utf-8"))
+              receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+              check = verify_receipt(case, receipt)
+              print(case_path.name, check)
+              if receipt.get("closed") and not check["authorized_closure"]:
+                  print("BYPASS_RECEIPT", receipt_path); failed += 1
+              if not check["valid"] and receipt.get("closed"):
+                  failed += 1
+          sys.exit(1 if failed else 0)
+          PY

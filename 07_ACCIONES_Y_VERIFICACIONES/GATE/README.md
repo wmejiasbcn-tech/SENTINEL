@@ -1,9 +1,9 @@
-# GATE v1.0 — Final-State Contract
+# GATE v1.0
 
-Contrato: `00_CONSTITUCION/WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT.md`  
-Cierre: `gate_close.close_case` → objeto final-state obligatorio.
+- Cierre: `gate_close.close_case`
+- Aceptación persistida: `accept_closure(case, receipt)`
+- Binding: `receipt.py` (`case_fingerprint` + `seal`)
 
 ```bash
-python3 gate_close.py cases/AUD-LAB-CARLA-01.json
-python3 -m unittest test_gate_v1.py -v
+python3 -m unittest test_gate_v1.py test_adversarial_bypass.py -v
 ```

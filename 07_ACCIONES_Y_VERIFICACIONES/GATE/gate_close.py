@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Único punto de cierre operacional SENTINEL — Mandatory Final-State Contract.
-"""
+"""Único punto de cierre operacional — Final-State Contract + receipt binding."""
 
 from __future__ import annotations
 
@@ -11,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from final_state import REQUIRED_FIELDS, build_final_state
+from receipt import assert_closure_authorized, bind_receipt, verify_receipt
 
 
 class GateBypassError(PermissionError):
@@ -31,10 +30,10 @@ def close_case(
             "force_closed": force_closed,
             "desired_semaforo": desired_semaforo,
         }
-    # Injected CLOSED/state in case are ignored inside build_final_state
     final = build_final_state(case, bypass_attempt=bypass)
+    receipt = bind_receipt(final, case)
+    final["receipt"] = receipt
     final["authorized"] = final["closed"] and final["gate_status"] == "AUTHORIZED"
-    # legacy aliases for transition
     final["semaforo"] = final["state"]
     final["CLOSED"] = final["closed"]
     final["OPEN"] = final["open"]
@@ -46,12 +45,31 @@ def close_case_file(path: str | Path, receipt_path: str | Path | None = None) ->
     case = json.loads(path.read_text(encoding="utf-8"))
     decision = close_case(case)
     out = Path(receipt_path) if receipt_path else path.with_suffix(path.suffix + ".gate_receipt.json")
-    receipt = {k: decision[k] for k in REQUIRED_FIELDS}
-    receipt["case_id"] = decision.get("case_id")
-    receipt["timestamp_utc"] = decision.get("timestamp_utc")
-    out.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    out.write_text(json.dumps(decision["receipt"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     decision["receipt_path"] = str(out)
     return decision
+
+
+def accept_closure(case: dict[str, Any], receipt: dict[str, Any]) -> dict[str, Any]:
+    """Única vía para aceptar un cierre persistido. Re-evalúa Gate + binding."""
+    check = verify_receipt(case, receipt)
+    if not check["authorized_closure"]:
+        return {
+            "accepted": False,
+            "closed": False,
+            "gate_status": "BLOCKED",
+            "bypass_rejected": True,
+            "reasons": check["reasons"],
+            "verify": check,
+        }
+    assert_closure_authorized(case, receipt)
+    return {
+        "accepted": True,
+        "closed": True,
+        "gate_status": "AUTHORIZED",
+        "bypass_rejected": False,
+        "verify": check,
+    }
 
 
 def assert_no_alternate_close_api() -> None:
