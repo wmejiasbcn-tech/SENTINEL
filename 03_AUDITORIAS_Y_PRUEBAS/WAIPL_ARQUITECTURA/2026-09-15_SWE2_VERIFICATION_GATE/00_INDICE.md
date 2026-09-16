@@ -1,7 +1,9 @@
-# Ciclo 2026-09-15 — SWE-2 → Verification Gate WAIPL
+﻿# Ciclo 2026-09-15 â€” SWE-2 â†’ Verification Gate WAIPL
 
-**Objeto:** propuesta de incorporación de disciplina operacional tipo SWE-2 / Cognition a WAIPL (SENTINEL, Will App), con corrección soberana Vár/Yata.
+**Objeto:** propuesta de incorporaciÃ³n de disciplina operacional tipo SWE-2 / Cognition a WAIPL (SENTINEL, Will App), con correcciÃ³n soberana VÃ¡r/Yata.
 
 | ID | Fuente | Archivo | Estado |
 |---|---|---|---|
-| AUD-ARQ-CARLA-01 | CARLA + corrección SOBERANO | `CARLA/AUD-ARQ-CARLA-01_swe2_gate_y_correccion_yata.md` | VERDE conceptual / AMARILLO operativo |
+| AUD-ARQ-CARLA-01 | CARLA + correcciÃ³n SOBERANO | `CARLA/AUD-ARQ-CARLA-01_swe2_gate_y_correccion_yata.md` | VERDE conceptual / AMARILLO operativo |
+| AUD-ARQ-CARLA-02 | CARLA | `CARLA/AUD-ARQ-CARLA-02_gate_piezas_vs_operativo.md` | VERDE/CONFORME (matiz tabla Sí=Arnés, no Gate SENTINEL) |
+
