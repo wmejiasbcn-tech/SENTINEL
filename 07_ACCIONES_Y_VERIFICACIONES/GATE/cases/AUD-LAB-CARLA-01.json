@@ -1,0 +1,18 @@
+{
+  "id": "AUD-LAB-CARLA-01",
+  "descripcion": "Regresión Gate: expediente histórico ORCID/Filtro/Contexto/audio (cee8816)",
+  "resultado": true,
+  "evidencia": true,
+  "verificacion": true,
+  "dictamen": true,
+  "verificador": "SENTINEL N1",
+  "requisitos_obligatorios": [
+    {"id": "orcid_ausente", "estado": "CONFORME"},
+    {"id": "filtro_fonetico_registrado", "estado": "CONFORME"},
+    {"id": "codex_ley_como_fichero", "estado": "PARCIAL"},
+    {"id": "protocolo_contexto_soberano", "estado": "CONFORME"},
+    {"id": "corpus_audio_este_chat", "estado": "DESCONOCIDO"},
+    {"id": "stop_si_falta_fuente", "estado": "CONFORME"},
+    {"id": "sin_mutacion_tip_lab", "estado": "CONFORME"}
+  ]
+}
