@@ -11,4 +11,5 @@
 | IMPL-GATE-v1.0-CIERRE | PROPIA | `IMPL_GATE_v1.0_CIERRE_OPERACIONAL.md` | Gate gobierna cierre (bypass bloqueado) |
 | FINAL-STATE-CONTRACT | PROPIA | `IMPL_FINAL_STATE_CONTRACT.md` + norma FINAL_STATE_CONTRACT | machine-checkable |
 | AUD-ARQ-PROPIA-02 | PROPIA | `PROPIA/AUD-ARQ-PROPIA-02_adversarial_bypass_gate_v1.md` | Bypass R6 corregido; 18 tests OK |
+| AUD-WILL-GATE-DEPLOY-01 | PROPIA | `../../WILL_APP/2026-09-16_GATE_VERCEL_PYTHON/PROPIA/AUD-WILL-GATE-DEPLOY-01_preview_bloqueado_y_correccion.md` | AMARILLO — Preview/prod no acreditados |
 
