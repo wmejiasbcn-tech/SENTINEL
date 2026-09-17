@@ -1,7 +1,7 @@
 # Norma soberana SENTINEL — Archivo por objeto y fuente v1.0
 
-**Estado:** CANÓNICA / VIGENTE  
-**Mandato:** William Mejías Navarro — 2026-09-13  
+**Estado:** CANÓNICA / VIGENTE
+**Mandato:** William Mejías Navarro — 2026-09-13
 **Ámbito:** ayer, hoy y adelante
 
 ## 1. Principio
@@ -35,7 +35,7 @@ Cuando el trabajo es verificar afirmaciones de otros nodos, dentro del ciclo:
 
 ESTADO · OBJETIVO · RESULTADO · EVIDENCIA · ESTADO EPISTÉMICO · DESVIACIONES · IMPACTO · JURISDICCIÓN · ACCIÓN/ESCALADO
 
-Etiquetas: `VERIFICADO` / `PARCIAL` / `NO VERIFICADO` / `DESCONOCIDO` / `CONFORME`.  
+Etiquetas: `VERIFICADO` / `PARCIAL` / `NO VERIFICADO` / `DESCONOCIDO` / `CONFORME`.
 No inventar hallazgos. Conservar UNKNOWN a propósito cuando falte evidencia.
 
 ## 5. Ciclos y continuidad
