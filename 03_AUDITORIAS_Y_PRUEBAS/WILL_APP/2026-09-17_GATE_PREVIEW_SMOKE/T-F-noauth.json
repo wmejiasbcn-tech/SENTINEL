@@ -1,0 +1,30 @@
+{
+  "label": "T-F-noauth",
+  "timestamp": "2026-09-17T23:39:29+02:00",
+  "url": "https://agente-will-9fn2xow94-wmejiasbcn-8378s-projects.vercel.app/api/gate/close",
+  "deployment_id": "dpl_5o7GE98sUe4GqRiQvpLRtYCo7MLy",
+  "sha_claimed_source": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "http_status": 401,
+  "latency_ms": 532,
+  "request_headers_redacted": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "x-vercel-protection-bypass": "[REDACTED]"
+  },
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "server": "Vercel",
+    "x-vercel-cache": "MISS",
+    "x-vercel-id": "cdg1::iad1::r7qd4-1789681175801-baae2a22e0a2"
+  },
+  "body": "{\"error\": \"unauthorized\", \"reason\": \"missing bearer\", \"state\": \"AMARILLO\", \"closed\": false, \"open\": true, \"gate_status\": \"BLOCKED\"}",
+  "body_json": {
+    "error": "unauthorized",
+    "reason": "missing bearer",
+    "state": "AMARILLO",
+    "closed": false,
+    "open": true,
+    "gate_status": "BLOCKED"
+  }
+}

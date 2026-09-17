@@ -1,0 +1,48 @@
+{
+  "preview_url": "https://agente-will-9fn2xow94-wmejiasbcn-8378s-projects.vercel.app",
+  "deployment_id": "dpl_5o7GE98sUe4GqRiQvpLRtYCo7MLy",
+  "source_head": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "pin": "f877f2e (unchanged)",
+  "T-A": {
+    "http": 200,
+    "state": "AMARILLO",
+    "closed": false,
+    "gate_status": "BLOCKED",
+    "pass": true
+  },
+  "T-B": {
+    "http": 200,
+    "state": "VERDE",
+    "closed": true,
+    "gate_status": "AUTHORIZED",
+    "has_receipt": true,
+    "pass": true
+  },
+  "T-R": {
+    "http": 200,
+    "body_keys": [
+      "accepted",
+      "closed",
+      "gate_status",
+      "bypass_rejected",
+      "verify"
+    ],
+    "valid": null,
+    "pass": true
+  },
+  "T-F": {
+    "noauth_http": 401,
+    "noauth_status": "BLOCKED",
+    "wrong_http": 401,
+    "wrong_status": "BLOCKED",
+    "fabricated_authorized": false,
+    "pass": true
+  },
+  "T-X": {
+    "badsig_http": 401,
+    "badsig_reason": "bad signature",
+    "skew_http": 401,
+    "skew_reason": "timestamp skew",
+    "pass": true
+  }
+}

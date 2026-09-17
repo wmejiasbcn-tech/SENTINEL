@@ -1,0 +1,5 @@
+﻿ORDEN-1
+mechanism=x-vercel-protection-bypass (automation-bypass from project protectionBypass; vercel curl / curl.exe)
+anon_POST=/api/gate/close -> HTTP 401 Protected deployment
+bypass_POST=/api/gate/close body={} -> HTTP gate unauthorized reason=missing bearer (NOT Protected deployment)
+conclusion=bypass reaches Python Function close.py

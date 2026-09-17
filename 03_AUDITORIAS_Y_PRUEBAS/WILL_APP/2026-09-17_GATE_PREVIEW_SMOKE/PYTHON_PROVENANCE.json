@@ -1,0 +1,32 @@
+{
+  "TA_gate_status": "BLOCKED",
+  "TA_gate_ref": "gate:v1.0:9f4dc22cdc51f249",
+  "TA_mandatory_pending": [
+    {
+      "id": "fuentes_citadas_verificadas",
+      "estado": "PARCIAL"
+    },
+    {
+      "id": "epistemic_status_completo",
+      "estado": "DESCONOCIDO"
+    }
+  ],
+  "TB_gate_status": "AUTHORIZED",
+  "TB_gate_ref": "gate:v1.0:7ee49f0db04aadeb",
+  "TB_receipt_type": "dict",
+  "TB_receipt_sha256": "6216cff25fb94db78f74219573469e98c13dc85fe45bb04fe2ae4c4ddfaafcdd",
+  "TR_verify": {
+    "valid": true,
+    "authorized_closure": true,
+    "reasons": [],
+    "live_gate_status": "AUTHORIZED",
+    "live_closed": true
+  },
+  "TR_accepted": true,
+  "python_markers": {
+    "has_gate_ref": true,
+    "has_final_state_fields": true,
+    "not_node_failClosed_shape_only": true
+  },
+  "conclusion": "Responses carry Gate Final-State fields + gate_ref/receipt from Python close/verify handlers (not Node failClosed fabrication)."
+}

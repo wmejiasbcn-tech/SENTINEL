@@ -1,0 +1,7 @@
+url=agente-will-9fn2xow94-wmejiasbcn-8378s-projects.vercel.app
+uid=None
+state=None
+target=None
+sha=46b7bca4718dfb8cd26e843aad1919f2acdf542d
+ref=HEAD
+local_source_head=46b7bca4718dfb8cd26e843aad1919f2acdf542d
