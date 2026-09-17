@@ -1,0 +1,51 @@
+{
+  "sha": "d76f991a7451a8b90a252c477590c94d4fbf4f7e",
+  "deployment_id": "dpl_3NKptPK4sY9jyWVXokRu2Yi3axRp",
+  "surface": "https://agente-will-app.vercel.app",
+  "pin": "f877f2e",
+  "precheck_anon": "PASS (401 missing bridge bearer both routes)",
+  "T-A": {
+    "http": 200,
+    "state": "AMARILLO",
+    "gate_status": "BLOCKED",
+    "closed": false,
+    "gate_ref": "gate:v1.0:9f4dc22cdc51f249",
+    "transport": "https-python-function",
+    "pass": true
+  },
+  "T-B": {
+    "http": 200,
+    "state": "VERDE",
+    "gate_status": "AUTHORIZED",
+    "closed": true,
+    "gate_ref": "gate:v1.0:7ee49f0db04aadeb",
+    "has_receipt": true,
+    "receipt_sha256": "724827ab6095f855ee765ce8c87f193baf0635900ca3caed00ac3d3545c723e5",
+    "mandatory_pending": 0,
+    "transport": "https-python-function",
+    "pass": true
+  },
+  "T-R": {
+    "http": 200,
+    "ok": true,
+    "pass": true
+  },
+  "T-F": {
+    "bridge_http": 401,
+    "bridge_status": "BLOCKED",
+    "python_http": 401,
+    "python_status": "BLOCKED",
+    "pass": true
+  },
+  "T-X": {
+    "badsig_http": 401,
+    "skew_http": 401,
+    "pass": true
+  },
+  "all_smokes_pass": true,
+  "provenance": {
+    "bridge_transport": "https-python-function",
+    "python_gate_ref": "gate:v1.0:7ee49f0db04aadeb",
+    "final_state_fields": true
+  }
+}

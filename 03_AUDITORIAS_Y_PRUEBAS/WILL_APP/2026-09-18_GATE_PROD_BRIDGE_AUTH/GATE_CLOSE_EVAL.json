@@ -1,0 +1,25 @@
+{
+  "remote_T-B": {
+    "state": "VERDE",
+    "closed": true,
+    "gate_status": "AUTHORIZED",
+    "gate_ref": "gate:v1.0:7ee49f0db04aadeb",
+    "mandatory_pending_count": 0
+  },
+  "local_gate_close_replay": {
+    "state": "VERDE",
+    "closed": true,
+    "gate_status": "AUTHORIZED",
+    "mandatory_pending_count": 0
+  },
+  "receipt_verify": {
+    "valid": true,
+    "authorized_closure": true,
+    "reasons": [],
+    "live_gate_status": "AUTHORIZED",
+    "live_closed": true
+  },
+  "receipt_sha256": "724827ab6095f855ee765ce8c87f193baf0635900ca3caed00ac3d3545c723e5",
+  "pin": "f877f2e",
+  "gate_authorizes_closure": true
+}

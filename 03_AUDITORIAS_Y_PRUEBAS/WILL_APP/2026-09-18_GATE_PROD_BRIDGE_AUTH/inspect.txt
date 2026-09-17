@@ -1,0 +1,34 @@
+﻿node.exe : Vercel CLI 59.11.2 (Node.js 24.17.0)
+En C:\Users\USER\AppData\Roaming\npm\vercel.ps1: 24 Carácter: 5
++     & "node$exe"  "$basedir/node_modules/vercel/dist/vc.js" $args
++     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Vercel CLI 59.11.2 (Node.js 24.17.0):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Fetching deployment "dpl_3NKptPK4sY9jyWVXokRu2Yi3axRp" in wmejiasbcn-8378s-projects
+> Fetched deployment "agente-will-dp2l4gy03-wmejiasbcn-8378s-projects.vercel.app" in wmejiasbcn-8378s-projects [3s]
+
+  General
+
+    id		dpl_3NKptPK4sY9jyWVXokRu2Yi3axRp
+    name	agente-will-app
+    target	production
+    status	ÔùÅ Ready
+    url		https://agente-will-dp2l4gy03-wmejiasbcn-8378s-projects.vercel.app
+    created	Fri Sep 18 2026 00:33:42 GMT+0200 (hora de verano de Europa central) [58s ago]
+
+
+  Aliases
+
+    ÔòÂ https://agente-will-app.vercel.app
+    ÔòÂ https://agente-will-app-wmejiasbcn-8378s-projects.vercel.app
+    
+
+  Builds
+
+    Ôöî .        [0ms]
+    Ôö£ÔöÇÔöÇ ╬╗ api/gate/close.py (13.63MB) [iad1]
+    Ôö£ÔöÇÔöÇ ╬╗ api/gate/verify.py (13.63MB) [iad1]
+    ÔööÔöÇÔöÇ ╬╗ api/vercel.cjs (1.12MB) [iad1]
+    
+

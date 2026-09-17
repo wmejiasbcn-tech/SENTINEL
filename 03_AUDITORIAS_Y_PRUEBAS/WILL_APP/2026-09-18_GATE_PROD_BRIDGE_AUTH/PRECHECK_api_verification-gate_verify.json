@@ -1,0 +1,21 @@
+{
+  "http": 401,
+  "body": {
+    "state": "AMARILLO",
+    "closed": false,
+    "open": true,
+    "gate_status": "BLOCKED",
+    "result_status": "AUSENTE",
+    "evidence_status": "INSUFICIENTE",
+    "verification_status": "NO_VERIFICADO",
+    "dictamen_status": "NO_CERRABLE",
+    "mandatory_requirements_pending": [
+      {
+        "id": "_runtime",
+        "estado": "DESCONOCIDO"
+      }
+    ],
+    "gate_ref": "gate:v1.0:fail-closed",
+    "fail_closed_reason": "missing bridge bearer"
+  }
+}

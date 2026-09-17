@@ -1,0 +1,26 @@
+{
+  "label": "T-X-skew",
+  "timestamp": "2026-09-18T00:35:35+02:00",
+  "url": "https://agente-will-app.vercel.app/api/gate/close",
+  "deployment_id": "dpl_3NKptPK4sY9jyWVXokRu2Yi3axRp",
+  "sha": "d76f991a7451a8b90a252c477590c94d4fbf4f7e",
+  "http_status": 401,
+  "latency_ms": 300,
+  "request_headers_redacted": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "x-vercel-protection-bypass": "[REDACTED]",
+    "Authorization": "[REDACTED]",
+    "X-WAIPL-Timestamp": "1789674540",
+    "X-WAIPL-Signature": "[REDACTED]"
+  },
+  "body": "{\"error\": \"unauthorized\", \"reason\": \"invalid bearer\", \"state\": \"AMARILLO\", \"closed\": false, \"open\": true, \"gate_status\": \"BLOCKED\"}",
+  "body_json": {
+    "error": "unauthorized",
+    "reason": "invalid bearer",
+    "state": "AMARILLO",
+    "closed": false,
+    "open": true,
+    "gate_status": "BLOCKED"
+  }
+}
