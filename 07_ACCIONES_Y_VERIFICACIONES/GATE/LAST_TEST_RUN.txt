@@ -16,12 +16,13 @@ test_bypass_blocked (test_gate_v1.TestFinalStateContract.test_bypass_blocked) ..
 test_fail_safe_ambiguous (test_gate_v1.TestFinalStateContract.test_fail_safe_ambiguous) ... ok
 test_human_acceptance_required_accepts_signed_artifact (test_gate_v1.TestFinalStateContract.test_human_acceptance_required_accepts_signed_artifact) ... ok
 test_human_acceptance_required_blocks_without_artifact (test_gate_v1.TestFinalStateContract.test_human_acceptance_required_blocks_without_artifact) ... ok
+test_human_acceptance_required_rejects_unsigned_artifact (test_gate_v1.TestFinalStateContract.test_human_acceptance_required_rejects_unsigned_artifact) ... ok
 test_injected_closed_rejected (test_gate_v1.TestFinalStateContract.test_injected_closed_rejected) ... ok
 test_invalid_case_missing_refs_fails (test_gate_v1.TestFinalStateContract.test_invalid_case_missing_refs_fails) ... ok
 test_no_forbidden_apis (test_gate_v1.TestFinalStateContract.test_no_forbidden_apis) ... ok
 test_rojo_cannot_close (test_gate_v1.TestFinalStateContract.test_rojo_cannot_close) ... ok
 
 ----------------------------------------------------------------------
-Ran 22 tests in 0.007s
+Ran 23 tests in 0.007s
 
 OK

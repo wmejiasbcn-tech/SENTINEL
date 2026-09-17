@@ -7,6 +7,8 @@ on:
 jobs:
   gate-tests:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     env:
       SENTINEL_GATE_HMAC_KEY: sentinel-gate-fixture-key
       PYTHONPATH: ${{ github.workspace }}/07_ACCIONES_Y_VERIFICACIONES/GATE

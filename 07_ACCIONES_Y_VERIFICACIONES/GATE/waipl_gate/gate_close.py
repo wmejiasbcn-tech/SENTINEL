@@ -90,6 +90,9 @@ def main(argv: list[str]) -> int:
         return 2
     force = "--force-verde" in argv
     args = [a for a in argv[1:] if not a.startswith("--")]
+    if not args:
+        print("uso: gate_close.py <case.json> [--force-verde]", file=sys.stderr)
+        return 2
     case = json.loads(Path(args[0]).read_text(encoding="utf-8"))
     decision = close_case(case, force_verde=force) if force else close_case_file(args[0])
     json.dump(decision, sys.stdout, ensure_ascii=False, indent=2)

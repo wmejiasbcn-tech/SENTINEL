@@ -153,5 +153,6 @@ def validate_case(case: dict[str, Any]) -> dict[str, Any]:
     if case.get("human_acceptance_required"):
         _require(isinstance(acceptance, dict), "human_acceptance_required=true requires human_acceptance object")
         _require(acceptance.get("approved") is True, "human_acceptance_required=true requires approved=true")
+        _require(_is_non_empty_text(acceptance.get("signature")), "human_acceptance_required=true requires signature")
 
     return case

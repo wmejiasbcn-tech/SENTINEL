@@ -7,7 +7,9 @@
 - Variable requerida: `SENTINEL_GATE_HMAC_KEY`
 
 ```bash
+cd /home/runner/work/SENTINEL/SENTINEL
 export SENTINEL_GATE_HMAC_KEY='local-test-only-key'
-python3 -m unittest test_gate_v1.py test_adversarial_bypass.py -v
-python3 validate_repo.py
+export PYTHONPATH="$PWD/07_ACCIONES_Y_VERIFICACIONES/GATE"
+python3 -m unittest discover -s "$PWD/07_ACCIONES_Y_VERIFICACIONES/GATE" -p 'test_*.py' -v
+python3 "$PWD/07_ACCIONES_Y_VERIFICACIONES/GATE/validate_repo.py"
 ```

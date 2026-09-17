@@ -107,6 +107,19 @@ class TestFinalStateContract(unittest.TestCase):
         out = close_case(case)
         self.assertTrue(out["closed"])
 
+    def test_human_acceptance_required_rejects_unsigned_artifact(self):
+        case = json.loads((CASES / "CASE_ALL_CONFORME.json").read_text(encoding="utf-8"))
+        case["human_acceptance_required"] = True
+        case["human_acceptance"] = {
+            "approved": True,
+            "actor": "wmn",
+            "approved_at": "2026-09-17T13:00:00Z",
+            "reason": "cierre autorizado",
+            "evidence_ref": "ACTA-HITL-001",
+        }
+        with self.assertRaises(CaseValidationError):
+            close_case(case)
+
     def test_invalid_case_missing_refs_fails(self):
         case = {
             "id": "bad",
