@@ -1,7 +1,8 @@
 {
   "contract": "WAIPL_VERIFICATION_GATE_v1.0_FINAL_STATE_CONTRACT",
+  "receipt_version": "1.1",
   "case_id": "CASE_ALL_CONFORME",
-  "case_fingerprint": "53e6d64714e4f53b3d95bc9a7a81cd3d2ac8cd84f812bfd9665238d233b2428d",
+  "case_fingerprint": "2dc38c4a79c11c6397c3f959341b8b542162904e6e647853dae4820ff55fe31b",
   "state": "VERDE",
   "closed": true,
   "open": false,
@@ -12,7 +13,9 @@
   "gate_status": "AUTHORIZED",
   "mandatory_requirements_pending": [],
   "gate_ref": "gate:v1.0:7ee49f0db04aadeb",
-  "timestamp_utc": "2026-09-16T03:18:06Z",
-  "closure_entry_point": "gate_close.close_case",
-  "seal": "2ca11ffa8c00338d04126a58bfe688df46553e7ad3bb29bd97ac9b608a07f052"
+  "issued_at": "2026-09-17T14:00:46Z",
+  "expires_at": "2026-10-17T14:00:46Z",
+  "issuer": "SENTINEL/WAIPL Verification Gate",
+  "closure_entry_point": "waipl_gate.gate_close.close_case",
+  "seal": "49cc2ebd2fb968dd49240026ed7c2d7c061b23de4b7a15b2e253fab4f73dbd37"
 }

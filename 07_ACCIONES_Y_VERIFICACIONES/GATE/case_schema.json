@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://waipl.local/sentinel/gate/case.schema.json",
+  "title": "WAIPL Verification Gate Case",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "resultado",
+    "evidencia",
+    "verificacion",
+    "dictamen",
+    "result_ref",
+    "evidence_refs",
+    "dictamen_ref",
+    "requisitos_obligatorios"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "resultado": {"type": "boolean"},
+    "evidencia": {"type": "boolean"},
+    "verificacion": {"type": "boolean"},
+    "dictamen": {"type": "boolean"},
+    "result_ref": {"type": "string", "minLength": 1},
+    "evidence_refs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "dictamen_ref": {"type": "string", "minLength": 1},
+    "requisitos_obligatorios": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["estado"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "nombre": {"type": "string", "minLength": 1},
+          "estado": {"type": "string", "minLength": 1},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "anyOf": [
+          {"required": ["id"]},
+          {"required": ["nombre"]}
+        ]
+      }
+    },
+    "confirmed_failure": {"type": "boolean"},
+    "rojo": {"type": "boolean"},
+    "ambiguous_final_state": {"type": "boolean"},
+    "human_acceptance_required": {"type": "boolean"},
+    "human_acceptance": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["approved", "actor", "approved_at", "reason", "evidence_ref"],
+      "properties": {
+        "approved": {"type": "boolean"},
+        "actor": {"type": "string", "minLength": 1},
+        "approved_at": {"type": "string", "format": "date-time", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "evidence_ref": {"type": "string", "minLength": 1},
+        "signature": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}
