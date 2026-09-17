@@ -1,0 +1,10 @@
+{
+  "endpoint": "POST /api/verification-gate",
+  "app_auth_required_in_code": false,
+  "test": "anonymous client POSTed WILL_AUDIT_B_COMPLETO (no app credentials)",
+  "T-B_http": 401,
+  "T-B_ok": null,
+  "T-B_gate_status": null,
+  "T-B_closed": null,
+  "classification": "NO_AUTHORIZED_ANON"
+}

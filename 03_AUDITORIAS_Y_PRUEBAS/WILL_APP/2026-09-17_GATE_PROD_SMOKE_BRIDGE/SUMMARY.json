@@ -1,0 +1,72 @@
+{
+  "surface": "https://agente-will-app.vercel.app",
+  "deployment_id": "dpl_FABuKuwcnXVnNWuRBDBPL3yd4sDG",
+  "sha": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "pin": "f877f2e unchanged",
+  "method": "Node bridge signs with Production GATE_SHARED_SECRET; no local secret",
+  "T-A": {
+    "http": 401,
+    "state": null,
+    "gate_status": null,
+    "closed": null,
+    "gate_ref": null,
+    "transport": null,
+    "pass": false
+  },
+  "T-B": {
+    "http": 401,
+    "state": null,
+    "gate_status": null,
+    "closed": null,
+    "gate_ref": null,
+    "has_receipt": false,
+    "receipt_sha256": null,
+    "mandatory_pending_count": 0,
+    "transport": null,
+    "pass": false
+  },
+  "T-R": {
+    "http": 200,
+    "ok": false,
+    "accepted": null,
+    "verify_valid": null,
+    "authorized_closure": null,
+    "transport": "https-python-function",
+    "pass": false
+  },
+  "T-F": {
+    "noauth_http": 401,
+    "noauth_status": "BLOCKED",
+    "badbearer_http": 401,
+    "badbearer_status": "BLOCKED",
+    "fabricated": false,
+    "pass": true
+  },
+  "T-X": {
+    "badsig_http": 401,
+    "badsig_reason": "invalid bearer",
+    "skew_http": 401,
+    "skew_reason": "invalid bearer",
+    "pass": true
+  },
+  "bridge_exposure": {
+    "endpoint": "POST /api/verification-gate",
+    "app_auth_required_in_code": false,
+    "test": "anonymous client POSTed WILL_AUDIT_B_COMPLETO (no app credentials)",
+    "T-B_http": 401,
+    "T-B_ok": null,
+    "T-B_gate_status": null,
+    "T-B_closed": null,
+    "classification": "NO_AUTHORIZED_ANON"
+  },
+  "provenance": {
+    "bridge_transport_field": null,
+    "python_gate_ref_TA": null,
+    "python_gate_ref_TB": null,
+    "final_state_fields_TB": false,
+    "node_failClosed_shape_only": false
+  },
+  "decision": "REPETIR_SMOKE_O_STOP",
+  "decision_detail": "algun smoke FAIL",
+  "expediente": "AMARILLO/OPEN — Production CONFORME no declarada"
+}

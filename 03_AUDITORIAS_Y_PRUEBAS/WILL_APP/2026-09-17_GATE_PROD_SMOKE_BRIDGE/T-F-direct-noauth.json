@@ -1,0 +1,30 @@
+{
+  "label": "T-F-direct-noauth",
+  "timestamp": "2026-09-17T23:56:11+02:00",
+  "url": "https://agente-will-app.vercel.app/api/gate/close",
+  "deployment_id": "dpl_FABuKuwcnXVnNWuRBDBPL3yd4sDG",
+  "sha": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "http_status": 401,
+  "latency_ms": 946,
+  "request_headers_redacted": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "x-vercel-protection-bypass": "[REDACTED]"
+  },
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "server": "Vercel",
+    "x-vercel-id": "cdg1::iad1::qtntm-1789682178662-da9ed0eb3d33",
+    "x-vercel-cache": "MISS"
+  },
+  "body": "{\"error\": \"unauthorized\", \"reason\": \"missing bearer\", \"state\": \"AMARILLO\", \"closed\": false, \"open\": true, \"gate_status\": \"BLOCKED\"}",
+  "body_json": {
+    "error": "unauthorized",
+    "reason": "missing bearer",
+    "state": "AMARILLO",
+    "closed": false,
+    "open": true,
+    "gate_status": "BLOCKED"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "fail_point": "T-A / T-B / T-R via POST /api/verification-gate on Production",
+  "technical_cause": "Node server-side fetch to Python uses VERCEL_URL (*.vercel.app deployment) which is behind Vercel Deployment Protection SSO. Server-to-server call receives 401 Protected deployment; Node forwards 401. Custom domain agente-will-app.vercel.app reaches Python (T-F/T-X PASS) but is not used as GATE_PYTHON_BASE_URL.",
+  "evidence": "T-A-bridge.json / T-B-bridge.json bodies contain vercel_auth_callback targeting .../api/gate/close",
+  "T-F_T-X": "PASS against /api/gate/close on custom domain (Gate auth layer works)",
+  "bridge_app_auth": "verificationGate.ts registers POST /api/verification-gate with NO application auth — residual CASO B risk once Node→Python path works",
+  "next_action_minima": "Set Production env GATE_PYTHON_BASE_URL=https://agente-will-app.vercel.app (custom domain, SSO-exempt per project protection all_except_custom_domains). Redeploy or wait for env propagation. Re-run T-A/B/R. Do not rotate GATE_SHARED_SECRET. Pin f877f2e unchanged. Then re-assess bridge app-auth (CASO B).",
+  "decision": "CORREGIR",
+  "Production_CONFORME": false,
+  "expediente": "AMARILLO/OPEN"
+}

@@ -1,0 +1,38 @@
+{
+  "label": "T-R-bridge",
+  "timestamp": "2026-09-17T23:56:11+02:00",
+  "url": "https://agente-will-app.vercel.app/api/verification-gate/verify",
+  "deployment_id": "dpl_FABuKuwcnXVnNWuRBDBPL3yd4sDG",
+  "sha": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "http_status": 200,
+  "latency_ms": 745,
+  "request_headers_redacted": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "x-vercel-protection-bypass": "[REDACTED]"
+  },
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "server": "Vercel",
+    "x-vercel-id": "cdg1::iad1::wxbd2-1789682178354-66dbe48efa2b",
+    "x-vercel-cache": "MISS"
+  },
+  "body": "{\"ok\":false,\"verify\":{\"error\":{\"code\":\"401\",\"message\":\"Protected deployment\"},\"protection\":{\"password_enabled\":false,\"vercel_auth_enabled\":true,\"vercel_auth_callback\":\"https://vercel.com/sso-api?url=https%3A%2F%2Fagente-will-li8oclcox-wmejiasbcn-8378s-projects.vercel.app%2Fapi%2Fgate%2Fverify&nonce=685db0dd75412c669219e4c9fefbd62fa91efda46c197cd2c2940302aa899b41\",\"auto_vercel_auth_redirect\":true}},\"transport\":\"https-python-function\"}",
+  "body_json": {
+    "ok": false,
+    "verify": {
+      "error": {
+        "code": "401",
+        "message": "Protected deployment"
+      },
+      "protection": {
+        "password_enabled": false,
+        "vercel_auth_enabled": true,
+        "vercel_auth_callback": "https://vercel.com/sso-api?url=https%3A%2F%2Fagente-will-li8oclcox-wmejiasbcn-8378s-projects.vercel.app%2Fapi%2Fgate%2Fverify&nonce=685db0dd75412c669219e4c9fefbd62fa91efda46c197cd2c2940302aa899b41",
+        "auto_vercel_auth_redirect": true
+      }
+    },
+    "transport": "https-python-function"
+  }
+}

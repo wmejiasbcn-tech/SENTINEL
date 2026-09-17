@@ -1,0 +1,34 @@
+{
+  "label": "T-A-bridge",
+  "timestamp": "2026-09-17T23:56:11+02:00",
+  "url": "https://agente-will-app.vercel.app/api/verification-gate",
+  "deployment_id": "dpl_FABuKuwcnXVnNWuRBDBPL3yd4sDG",
+  "sha": "46b7bca4718dfb8cd26e843aad1919f2acdf542d",
+  "http_status": 401,
+  "latency_ms": 2105,
+  "request_headers_redacted": {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "x-vercel-protection-bypass": "[REDACTED]"
+  },
+  "response_headers": {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "no-store",
+    "server": "Vercel",
+    "x-vercel-id": "cdg1::iad1::t66jz-1789682175326-2c8dd1707c8b",
+    "x-vercel-cache": "MISS"
+  },
+  "body": "{\"protection\":{\"vercel_auth_callback\":\"https://vercel.com/sso-api?url=https%3A%2F%2Fagente-will-li8oclcox-wmejiasbcn-8378s-projects.vercel.app%2Fapi%2Fgate%2Fclose&nonce=d751a598d2f5f34858635656b45b4079cf57515958028c687bb7453861d24940\",\"auto_vercel_auth_redirect\":true,\"password_enabled\":false,\"vercel_auth_enabled\":true},\"error\":{\"message\":\"Protected deployment\",\"code\":\"401\"}}",
+  "body_json": {
+    "protection": {
+      "vercel_auth_callback": "https://vercel.com/sso-api?url=https%3A%2F%2Fagente-will-li8oclcox-wmejiasbcn-8378s-projects.vercel.app%2Fapi%2Fgate%2Fclose&nonce=d751a598d2f5f34858635656b45b4079cf57515958028c687bb7453861d24940",
+      "auto_vercel_auth_redirect": true,
+      "password_enabled": false,
+      "vercel_auth_enabled": true
+    },
+    "error": {
+      "message": "Protected deployment",
+      "code": "401"
+    }
+  }
+}
