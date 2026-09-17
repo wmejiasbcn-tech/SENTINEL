@@ -4,7 +4,7 @@ from __future__ import annotations
 import sys
 
 from waipl_gate.gate_close import *  # noqa: F401,F403
-from waipl_gate.gate_close import main
+from waipl_gate.gate_close import assert_no_alternate_close_api, main
 
 
 if __name__ == "__main__":

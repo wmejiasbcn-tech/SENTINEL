@@ -62,6 +62,28 @@
         "evidence_ref": {"type": "string", "minLength": 1},
         "signature": {"type": "string", "minLength": 1}
       }
-    }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "human_acceptance_required": {"const": true}
+          },
+          "required": ["human_acceptance_required"]
+        },
+        "then": {
+          "properties": {
+            "human_acceptance": {
+              "type": "object",
+              "required": ["approved", "actor", "approved_at", "reason", "evidence_ref", "signature"],
+              "properties": {
+                "approved": {"const": true}
+              }
+            }
+          },
+          "required": ["human_acceptance"]
+        }
+      }
+    ]
   }
 }

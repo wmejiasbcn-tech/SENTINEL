@@ -13,7 +13,7 @@ os.environ.setdefault("SENTINEL_GATE_HMAC_KEY", "sentinel-gate-fixture-key")
 
 from waipl_gate.case_schema import CaseValidationError
 from waipl_gate.gate_close import accept_closure, close_case
-from waipl_gate.receipt import case_fingerprint, verify_receipt
+from waipl_gate.receipt import _seal, case_fingerprint, verify_receipt
 
 HERE = Path(__file__).resolve().parent
 CASES = HERE / "cases"
@@ -159,6 +159,21 @@ class TestAdversarialBypass(unittest.TestCase):
         check = verify_receipt(case, receipt)
         self.assertFalse(check["valid"])
         self.assertIn("receipt_expired", check["reasons"])
+        acc = accept_closure(case, receipt)
+        self.assertFalse(acc["accepted"])
+        self.assertFalse(acc["closed"])
+
+    def test_M_authentic_expired_receipt_rejected(self):
+        case = load("CASE_ALL_CONFORME.json")
+        out = close_case(case)
+        receipt = copy.deepcopy(out["receipt"])
+        receipt["issued_at"] = "2020-01-01T00:00:00Z"
+        receipt["expires_at"] = "2020-01-31T00:00:00Z"
+        receipt["seal"] = _seal({k: receipt[k] for k in receipt if k != "seal"})
+        check = verify_receipt(case, receipt)
+        self.assertFalse(check["valid"])
+        self.assertIn("receipt_expired", check["reasons"])
+        self.assertNotIn("seal_invalid", check["reasons"])
         acc = accept_closure(case, receipt)
         self.assertFalse(acc["accepted"])
         self.assertFalse(acc["closed"])

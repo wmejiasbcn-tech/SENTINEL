@@ -10,6 +10,7 @@ test_I_descontextualized_receipt_same_id_different_body (test_adversarial_bypass
 test_J_evaluate_alone_does_not_close (test_adversarial_bypass.TestAdversarialBypass.test_J_evaluate_alone_does_not_close) ... ok
 test_K_invariant_forall_known_paths (test_adversarial_bypass.TestAdversarialBypass.test_K_invariant_forall_known_paths) ... ok
 test_L_expired_receipt_rejected (test_adversarial_bypass.TestAdversarialBypass.test_L_expired_receipt_rejected) ... ok
+test_M_authentic_expired_receipt_rejected (test_adversarial_bypass.TestAdversarialBypass.test_M_authentic_expired_receipt_rejected) ... ok
 test_all_conforme_contract (test_gate_v1.TestFinalStateContract.test_all_conforme_contract) ... ok
 test_aud_lab_carla_01_contract (test_gate_v1.TestFinalStateContract.test_aud_lab_carla_01_contract) ... ok
 test_bypass_blocked (test_gate_v1.TestFinalStateContract.test_bypass_blocked) ... ok
@@ -24,6 +25,6 @@ test_no_forbidden_apis (test_gate_v1.TestFinalStateContract.test_no_forbidden_ap
 test_rojo_cannot_close (test_gate_v1.TestFinalStateContract.test_rojo_cannot_close) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.007s
+Ran 25 tests in 0.008s
 
 OK
