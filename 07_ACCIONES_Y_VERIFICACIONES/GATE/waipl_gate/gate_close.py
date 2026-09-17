@@ -98,14 +98,24 @@ assert_no_alternate_close_api()
 
 def main(argv: list[str]) -> int:
     if len(argv) < 2:
-        print("uso: gate_close.py <case.json> [--force-verde]", file=sys.stderr)
+        print("uso: gate_close.py <case.json> [--force-verde] [--force-closed] [--desired-semaforo=VERDE]", file=sys.stderr)
         return 2
-    force = "--force-verde" in argv
+    force_verde = "--force-verde" in argv
+    force_closed = "--force-closed" in argv
+    desired_semaforo = None
+    for arg in argv[1:]:
+        if arg.startswith("--desired-semaforo="):
+            desired_semaforo = arg.split("=", 1)[1]
     args = [a for a in argv[1:] if not a.startswith("--")]
     if not args:
-        print("uso: gate_close.py <case.json> [--force-verde]", file=sys.stderr)
+        print("uso: gate_close.py <case.json> [--force-verde] [--force-closed] [--desired-semaforo=VERDE]", file=sys.stderr)
         return 2
-    decision = close_case_file(args[0], force_verde=force)
+    decision = close_case_file(
+        args[0],
+        force_verde=force_verde,
+        force_closed=force_closed,
+        desired_semaforo=desired_semaforo,
+    )
     json.dump(decision, sys.stdout, ensure_ascii=False, indent=2)
     print()
     return 0 if decision["closed"] else 1

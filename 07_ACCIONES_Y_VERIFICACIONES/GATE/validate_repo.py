@@ -54,13 +54,28 @@ def validate_utf8_and_mojibake(errors: list[str]) -> None:
                 break
 
 
+def looks_like_gate_case(payload: object) -> bool:
+    if not isinstance(payload, dict):
+        return False
+    required_markers = {"resultado", "evidencia", "verificacion", "dictamen", "requisitos_obligatorios"}
+    return required_markers.issubset(payload.keys())
+
+
 def validate_cases_and_receipts(errors: list[str]) -> None:
-    for case_path in sorted((GATE_DIR / "cases").glob("*.json")):
+    case_files: list[Path] = []
+    for case_path in sorted(REPO_ROOT.rglob("*.json")):
         if case_path.name.endswith(".gate_receipt.json"):
             continue
         try:
-            case = json.loads(case_path.read_text(encoding="utf-8"))
-            validate_case(case)
+            payload = json.loads(case_path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            errors.append(f"CASE_READ_ERROR {case_path}: {exc}")
+            continue
+        if not looks_like_gate_case(payload):
+            continue
+        case_files.append(case_path)
+        try:
+            validate_case(payload)
         except Exception as exc:
             errors.append(f"CASE_INVALID {case_path}: {exc}")
             continue
@@ -69,15 +84,16 @@ def validate_cases_and_receipts(errors: list[str]) -> None:
         if receipt_path.exists():
             try:
                 receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
-                check = verify_receipt(case, receipt)
+                check = verify_receipt(payload, receipt)
                 if not check["valid"]:
                     errors.append(f"RECEIPT_INVALID {receipt_path}: {check['reasons']}")
             except Exception as exc:
                 errors.append(f"RECEIPT_ERROR {receipt_path}: {exc}")
 
-    for receipt_path in sorted((GATE_DIR / "cases").glob("*.gate_receipt.json")):
+    known_cases = {str(path) for path in case_files}
+    for receipt_path in sorted(REPO_ROOT.rglob("*.gate_receipt.json")):
         case_path = Path(str(receipt_path).removesuffix(".gate_receipt.json"))
-        if not case_path.exists():
+        if not case_path.exists() or str(case_path) not in known_cases:
             errors.append(f"ORPHAN_RECEIPT {receipt_path}")
 
 
