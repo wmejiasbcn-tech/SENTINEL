@@ -103,6 +103,8 @@ Redeploy ahora     = NO
 Pin sync           = REQUIERE ESTUDIO DE COMPATIBILIDAD ANTES DE EJECUTAR
 ~~~
 
-## REGLA DE CIERRE
+## ESTADO VIGENTE
 
-Este expediente permanece **OPEN** hasta disponer de una decisión soberana posterior sobre si iniciar una migración de pin. No se autoriza ningún cambio de Production como consecuencia de este análisis.
+El análisis provisional queda supersedido por `AUD-GATE-PIN-SYNC-01_CIERRE_FORMAL.md`.
+
+**Estado vigente: VERDE / CLOSED=true.** No se requiere ninguna acción sobre Production. Cualquier futura migración de pin deberá abrir un expediente nuevo.
