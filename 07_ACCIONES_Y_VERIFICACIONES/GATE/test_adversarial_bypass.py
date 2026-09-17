@@ -159,6 +159,9 @@ class TestAdversarialBypass(unittest.TestCase):
         check = verify_receipt(case, receipt)
         self.assertFalse(check["valid"])
         self.assertIn("receipt_expired", check["reasons"])
+        acc = accept_closure(case, receipt)
+        self.assertFalse(acc["accepted"])
+        self.assertFalse(acc["closed"])
 
 
 if __name__ == "__main__":

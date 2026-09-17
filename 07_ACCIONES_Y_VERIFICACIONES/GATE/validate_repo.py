@@ -75,6 +75,11 @@ def validate_cases_and_receipts(errors: list[str]) -> None:
             except Exception as exc:
                 errors.append(f"RECEIPT_ERROR {receipt_path}: {exc}")
 
+    for receipt_path in sorted((GATE_DIR / "cases").glob("*.gate_receipt.json")):
+        case_path = Path(str(receipt_path).removesuffix(".gate_receipt.json"))
+        if not case_path.exists():
+            errors.append(f"ORPHAN_RECEIPT {receipt_path}")
+
 
 def validate_operational_indexes(errors: list[str]) -> None:
     backlog = REPO_ROOT / "08_INCIDENCIAS" / "INDICE_PENDIENTES_TECNICOS.md"

@@ -157,10 +157,10 @@ def verify_receipt(case: dict[str, Any], receipt: dict[str, Any]) -> dict[str, A
 
     try:
         expected_seal = _seal({field: receipt[field] for field in CANONICAL_RECEIPT_FIELDS})
-        if not hmac.compare_digest(str(receipt.get("seal")), expected_seal):
-            reasons.append("seal_invalid")
     except RuntimeError:
-        reasons.append("seal_key_unavailable")
+        return {"valid": False, "authorized_closure": False, "reasons": ["seal_key_unavailable"]}
+    if not hmac.compare_digest(str(receipt.get("seal")), expected_seal):
+        reasons.append("seal_invalid")
 
     try:
         expires_at = _parse_utc(str(receipt.get("expires_at")))

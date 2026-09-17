@@ -42,10 +42,22 @@ def close_case(
     return final
 
 
-def close_case_file(path: str | Path, receipt_path: str | Path | None = None) -> dict[str, Any]:
+def close_case_file(
+    path: str | Path,
+    receipt_path: str | Path | None = None,
+    *,
+    force_verde: bool = False,
+    force_closed: bool = False,
+    desired_semaforo: str | None = None,
+) -> dict[str, Any]:
     path = Path(path)
     case = json.loads(path.read_text(encoding="utf-8"))
-    decision = close_case(case)
+    decision = close_case(
+        case,
+        force_verde=force_verde,
+        force_closed=force_closed,
+        desired_semaforo=desired_semaforo,
+    )
     out = Path(receipt_path) if receipt_path else path.with_suffix(path.suffix + ".gate_receipt.json")
     out.write_text(json.dumps(decision["receipt"], ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     decision["receipt_path"] = str(out)
@@ -93,8 +105,7 @@ def main(argv: list[str]) -> int:
     if not args:
         print("uso: gate_close.py <case.json> [--force-verde]", file=sys.stderr)
         return 2
-    case = json.loads(Path(args[0]).read_text(encoding="utf-8"))
-    decision = close_case(case, force_verde=force) if force else close_case_file(args[0])
+    decision = close_case_file(args[0], force_verde=force)
     json.dump(decision, sys.stdout, ensure_ascii=False, indent=2)
     print()
     return 0 if decision["closed"] else 1
