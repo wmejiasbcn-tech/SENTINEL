@@ -22,7 +22,13 @@ jobs:
           python -m unittest discover -s "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE" -p 'test_*.py' -v
       - name: force-verde must not close AUD-LAB-CARLA-01
         run: |
-          python "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE/gate_close.py" "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/AUD-LAB-CARLA-01.json" --force-verde; test $? -eq 1
+          if python "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE/gate_close.py" "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE/cases/AUD-LAB-CARLA-01.json" --force-verde; then
+            echo "force-verde unexpectedly returned success"
+            exit 1
+          else
+            rc=$?
+            test "$rc" -eq 1
+          fi
       - name: validate receipts on disk against live Gate
         run: |
           python "$GITHUB_WORKSPACE/07_ACCIONES_Y_VERIFICACIONES/GATE/validate_repo.py"
